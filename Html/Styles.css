@@ -1,0 +1,36 @@
+/*Selectores de texto*/
+li{
+    color:green;
+}
+span{
+    color:blue;
+}
+.noTengo{
+    color:red;
+}
+#queso{
+    color:yellow;
+}
+/*Propiedades de texto*/
+h1{
+    font-family:"Lucida Sans";
+    font-size: 50px;
+    text-align: center;
+    text-decoration: underline;
+}
+span{
+    font-weight: bold; /*bold=700*/
+    font-style: italic;
+}
+#title{
+    text-transform: capitalize;
+}
+/*Boxes*/
+div{
+    width: 200px;
+    height: 200px;
+    background-color: red; /*El fondo*/
+}
+#caja{
+    color:blue
+}
