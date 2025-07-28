@@ -25,7 +25,7 @@ span{
 #title{
     text-transform: capitalize;
 }
-/*Boxes*/
+/*Box model*/
 div{
     width: 200px;
     height: 200px;
@@ -33,4 +33,13 @@ div{
 }
 #caja{
     color:blue
+}
+#form{
+    padding: 5px;
+}
+.form1{
+    margin: 5px
+}
+.formSubmit{
+    background-color: black;
 }
