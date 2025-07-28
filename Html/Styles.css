@@ -1,3 +1,7 @@
+body{
+    background-color: #121212;
+    color: #f3f1f1;
+}
 /*Selectores de texto*/
 li{
     color:green;
@@ -28,18 +32,34 @@ span{
 /*Box model*/
 div{
     width: 200px;
-    height: 200px;
-    background-color: red; /*El fondo*/
+    background-color:chocolate;
+    /*Border*/
+    border: 3px solid black;
+    border-radius: 10px;
 }
 #caja{
-    color:blue
+    color: black;
+    text-align: center;
+    padding: 10px;
 }
 #form{
     padding: 5px;
+    background-color: violet;
+    width: 200px;
+    margin:auto
 }
-.form1{
-    margin: 5px
+input{
+    margin: 5px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid pink;
+    color: black;
+}
+input::placeholder{
+    color: pink;
 }
 .formSubmit{
-    background-color: black;
+    background-color: pink;
+    color: violet;
+    border-radius: 4px;
 }
