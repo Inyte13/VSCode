@@ -1,0 +1,39 @@
+body{
+    background-color: #171819;
+    color: #fffb;
+    margin: 0;
+}
+.title{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fffd;
+    margin: 0;
+    padding: 10px 0
+    
+}
+form{
+    background-color: #272829;
+    padding: 10px 17px;
+    max-width: 300px;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 40px 0 #000b;
+    margin-top: 50px;
+}
+.tarjeta{
+    padding: 7px 0;
+    border: none;
+}
+input, textarea{
+    box-sizing: border-box; /* Para que se adapte el padding y el border al tamaño que le asigno*/
+    width: 100%;
+    padding: 7px;
+    background-color: #171819aa;
+    border: none;
+    border-left: 1px solid #fffb;
+    color: #fffb;
+    font-family: 'Courier New', Courier, monospace; 
+}
+textarea{
+    resize: none;
+}

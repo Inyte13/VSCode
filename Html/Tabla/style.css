@@ -1,0 +1,23 @@
+body{
+    background-color: #171819;
+    color: #fffb;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+td, th{
+    border: 1px solid #fffb;
+    text-align: center;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid #fff8;
+}
+td{
+    color: #fff8;
+}
+table{
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    border-spacing: 10px;
+}

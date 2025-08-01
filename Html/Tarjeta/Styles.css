@@ -1,28 +1,32 @@
 body{
-    background: #121212;
+    background: #111;
 }
 #tarjeta{
     color: black;
     text-align: center;
-    width: 400px;
     margin: auto;
+    width: 400px;
     font-size: 16px;
+    margin-top: 30px;
+    box-shadow: 0 0 40px 0 #af2;
+    box-sizing: border-box;
 }
-h1{
+#tarjeta_name{
     background-color: #af2;
-    padding-b: 10px;
+    padding-bottom: 10px;
     margin: 0;
     text-transform: uppercase;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-shadow: 0 0 3px #0f0;
 }
-h2{
+#tarjeta_h2{
     background-color: #af2;
     margin: 0;
     padding: 0 10px 10px 10px;
     text-transform: uppercase;
     font-size: 1.1em;
 }
-p{
+#tarjeta_contenido{
     background-color: #af2a;
     font-size: 0.9em;
     padding: 20px;
@@ -32,7 +36,7 @@ p{
 .paisaje{
     width: 100%;
     min-height: 500px;
-    background: url(https://b329456.smushcdn.com/329456/wp-content/uploads/2021/12/Que-es-paisaje-1024x585.jpg?lossy=2&strip=1&webp=1) center/contain fixed #000;
+    background: url(https://b329456.smushcdn.com/329456/wp-content/uploads/2021/12/Que-es-paisaje-1024x585.jpg?lossy=2&strip=1&webp=1) center/contain #000;
     /*url - ubicación - size - scroll - color*/
     /* background-size: 100%;  Ocupa todo el ancho */
     /* background-size: contain;  Entre al menos una vez */
