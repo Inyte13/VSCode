@@ -1,1 +1,14 @@
+# Ignorar configuración específica de Visual Studio Code
+# Contiene ajustes personalizados del editor, que no afectan al código ni a otros usuarios.
 .vscode/
+# Ignorar archivos compilados de Python (bytecode)
+# Estos archivos son generados automáticamente por Python para acelerar la ejecución,
+# pero no es necesario versionarlos.
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Ignorar archivos de sistema específicos de algunos sistemas operativos
+# Estos archivos no tienen nada que ver con el proyecto y solo generan ruido en el repositorio.
+.DS_Store   # macOS
+Thumbs.db   # Windows
