@@ -1,3 +1,5 @@
+# Mi entorno virtual "buscador"
+buscador/
 # Ignorar configuración específica de Visual Studio Code
 # Contiene ajustes personalizados del editor, que no afectan al código ni a otros usuarios.
 .vscode/
