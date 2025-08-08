@@ -18,4 +18,4 @@ def buscar(): # Función que se ejecuta cuando el usuario hace una búsqueda
     resultados=dataF[dataF["genero"].str.contains(consulta, case=False)] # Busca en la columna "genero" sin distinguir mayúsculas y minúsculas
     return render_template("resultados.html", libros=resultados.to_dict(orient='records')) # Muestra resultados.html y palas los resultados como un diccionario
 if __name__=='__main__': # Si el archivo es el principal
-    app.run(debug=True) # Ejecuta la app en modo debug
+    app.run(debug=True) # Ejecuta la app en modo     debug
