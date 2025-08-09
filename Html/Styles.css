@@ -63,3 +63,12 @@ input::placeholder{
     color: violet;
     border-radius: 4px;
 }
+img[src="../Html/Imagenes/argos.jpg"]{
+    width: 100%; 
+    /*(src$="png") busca los que terminan en "png"
+    (src^="argos") busca los que empiezan por "argos"*/
+}
+ul strong{} /*Strong dentro de ul*/
+ul>strong{} /*Strong hijo directo de ul*/
+h1+p{} /*Inmediato P que va después de h1*/
+h1~p{} /*Todos los P que vaya después de h1*/
