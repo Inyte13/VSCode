@@ -70,5 +70,34 @@ img[src="../Html/Imagenes/argos.jpg"]{
 }
 ul strong{} /*Strong dentro de ul*/
 ul>strong{} /*Strong hijo directo de ul*/
-h1+p{} /*Inmediato P que va después de h1*/
+h1+p{} /*Inmediato P que va después de h1 SE MODIFICA P*/
+h1:has(+div){} /*Si h1 tiene un div inmediatamente después SE MODIFICA H1*/
 h1~p{} /*Todos los P que vaya después de h1*/
+h1:hover{} /*Cuando el mouse está encima de h1*/
+h1:active{} /*Cuando se hace click en h1*/
+li:first-child{} /*Primer hijo li*/
+li:last-child{} /*Último hijo li*/
+li:nth-child(2){} /*Segundo hijo li entre los li*/
+li:nth-child(2n){} /*Hijos li en posición par*/
+li:nth-of-type(2){} /*Segundo hijo li entre todos los li*/
+.lista li:not(.excluir){} /*li que no tenga la clase excluir dentro de .lista*/
+div:empty{}
+imput:checked{} /*Input que esté seleccionado*/
+a:link{} /*Enlace no visitado*/
+a:visited{} /*Enlace visitado*/
+/*IS*/
+section .elemento1,
+section .elemento2,
+section .elemento3{}
+/*Es lo mismo que:*/
+section :is(.elemento1, .elemento2, .elemento3) {} /*Más espicificidad*/
+section :where(.elemento1, .elemento2, .elemento3) {} /*Menos especificidad*/
+section:has(.elemento1){} /*Si tiene un elemento1 dentro de section*/
+h1::first-letter{} /*Primera letra de h1*/
+div::first-line{} /*Primera línea de div*/
+h1::selection{} /*Texto seleccionado de h1*/
+input::placeholder{} /*Placeholder de input*/
+li::marker{} /*Marcador de li*/
+li::before{} /*Antes de li*/
+li::after{} /*Después de li*/
+
