@@ -1,4 +1,5 @@
 str="Holao"
+print(f"{str} soy Luis") # Imprime el string (Holao soy Luis)
 print(str.find("o")) # Devuelve la posición en la que se encontró "o" sino devuelve -1 (1)   
 print(str.index("o")) # Devuelve la posición en la que se encontró "o" sino lanza error (1)
 print(str.count("o")) # Cuenta cuantas veces se repite "o" (2)
