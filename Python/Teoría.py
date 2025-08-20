@@ -1,7 +1,6 @@
-y=3//2 # División redondeada hacia abajo y ENTERO
-print(y)
-z=8/2 #4 es DOUBLE/FLOAT 
-print(z)
+print(3**2) # Potencia
+print(3/2) # 1.5
+print(3//2) # División redondeada hacia abajo (1)
 #BUCLES
 #for a in b  a=x,y,z b=[0](x),[1](y),[2](z) 
 #EN LISTAS EN TUPLAS EN CONJUNTOS    
