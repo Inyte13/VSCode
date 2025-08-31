@@ -3,10 +3,9 @@ import email
 from email.header import decode_header
 IMAP_SERVER = "imap.gmail.com"
 EMAIL_ACCOUNT = "lgarciada@unsa.edu.pe"
-PASSWORD = "bajx syzz ljkp dbox" 
+PASSWORD = "bajx syzz ljkp dbox"
 
-# --- Conectar a Gmail ---
-mail = imaplib.IMAP4_SSL(IMAP_SERVER)
+mail = imaplib.IMAP4_SSL(IMAP_SERVER) 
 mail.login(EMAIL_ACCOUNT, PASSWORD)
 
 # Seleccionar la bandeja de entrada
