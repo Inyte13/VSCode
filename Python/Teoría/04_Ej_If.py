@@ -1,4 +1,4 @@
-# E.1
+# E.1 Comparación de 2 números asignando al mismo tiempo
 # num1, num2=input("Ingrese dos números: ").split()
 # num1=int(num1)
 # num2=int(num2)
@@ -8,7 +8,7 @@
 #     print(f"{num2} es mayor que {num1}")
 # else:
 #     print("Son iguales")
-# E.2
+# E.2 Calculadora básica
 # num1, num2=input("Ingrese dos números: ").split()
 # num1=float(num1)
 # num2=float(num2)
@@ -26,13 +26,13 @@
 #         print(num1/num2)
 # else:
 #     print("Ingrese una operación válida")
-# E.3
+# E.3 Saber si el año es bisiesto
 # year=int(input("Ingrese el año: "))
 # if (year%4==0 and year%100!=0) or year%400==0:
 #     print(f"El {year} es bisiesto")
 # else:
 #     print(f"El {year} no es bisiesto")
-# E.4
+# E.4 Categorización de edad
 # age=int(input("Ingresa tu edad: "))
 # etapa=""
 # if 65<=age:

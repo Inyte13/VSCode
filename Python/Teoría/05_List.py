@@ -12,6 +12,6 @@ print(lista1[::2]) # [1, 3, 5]
 print(lista1[::-1]) # [5, 4, 3, 2, 1]
 # Copiar la lista
 print(lista1[:]) # [1, 2, 3, 4, 5]
-lista1+=[6,7] # Agregando valores
+lista1+=[6,7] # Concatenando valores
 # Longitud de la lista
 print(len(lista1))
