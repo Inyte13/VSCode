@@ -19,4 +19,4 @@ def primera_suma(nums, goal):
     for b in range(a+1,len(nums)):
       if nums[a]+nums[b]==goal:
         return [a,b]
-print(primera_suma([4,5,6,9],8))
+print(primera_suma([4,5,4,9],8))
