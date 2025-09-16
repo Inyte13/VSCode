@@ -13,8 +13,12 @@
 </head>
 <body>
   <header class="hero">
+    <video autoplay muted loop playsinline class="hero__video">
+    <source src="/project/landing_page_css/videos/GHE   RECAP NO TEXT.mp4" type="video/mp4">
+    Tu navegador no soporta videos en HTML5.
+  </video>
     <nav class="navbar container">
-      <div class="navbar__logo">
+      <div class="navbar__logo">  
         <img src="/project/landing_page_css/images/guru-icon-1.svg" alt="Logo Gurú">
       </div>
       <ul class="navbar__link">
@@ -28,7 +32,27 @@
 
     </nav>
     <section class="hero__container container">
-      <h1 class="hero__title">GURÚ HI<br>EXPERIENCE</h1>
+      <h1 class="hero__title">GURÚ HI<br>
+        <span>EXPERIENCE</span>
+      </h1>
+      <ul class="hero__list">
+        <li>
+          <img src="/project/landing_page_css/images/calendario.svg" alt="Calendario">
+          <span>18 de setiembre</span>
+        </li>
+        <li>
+          <img src="/project/landing_page_css/images/reloj.svg" alt="Reloj">
+          <span>8:30 am - 6:30 pm</span>
+        </li>
+      </ul>
+      <div class="hero__buttons">
+        <a class="btn" href="https://wa.me/51978565512?text=quiero%20comprar%20mi%20entrada" target="_blank">
+          Contactar a un asesor
+        </a>
+        <a class="btn" href="https://experience.gurumotivacion.com/entradas/guru-hi-experience/" target="_blank">
+          Comprar entrada
+        </a>
+      </div>
     </section>
 
   </header>
