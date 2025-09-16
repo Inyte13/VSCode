@@ -7,10 +7,11 @@ buscador/
 # Estos archivos son generados automáticamente por Python para acelerar la ejecución,
 # pero no es necesario versionarlos.
 __pycache__/
+/.idea/ 
 *.pyc
 *.pyo
 *.pyd
 # Ignorar archivos de sistema específicos de algunos sistemas operativos
 # Estos archivos no tienen nada que ver con el proyecto y solo generan ruido en el repositorio.
-.DS_Store   # macOS
-Thumbs.db   # Windows
+.DS_Store   
+Thumbs.db   
