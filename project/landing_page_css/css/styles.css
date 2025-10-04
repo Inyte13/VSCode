@@ -2,17 +2,34 @@
   margin: 0;
   box-sizing: border-box;
 }
-h1{
-  margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap'); /* importando fuentes */
+/* Creando variables - Custom properties*/
+:root{
+  --pading-container: 100px 0;
+  --color-title: #014;
+
+
 }
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;600;700&display=swap');
 body{
   font-family: "Roboto", sans-serif;
 }
 .container{
   width: 90%;
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
   overflow: hidden;
-  background-color: #ff6;  
+  padding: var(--pading-container);
+}
+.hero{
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: grid; /* Dividiendo en grillas */
+  grid-template-rows: 100px 1fr; /* La primera fila de 100px, la segudna lo restante*/
+  background-image: linear-gradient(180deg, #0008 0%, #0008 100%), url(/project/landing_page_css/images/computer.jpg);
+  background-size: cover; /* Adapte a la pantalla*/
+
+}
+.nav{
+  --pading-container:0
 }

@@ -3,59 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gurú Hi Experience</title>
-  <!-- modern normalize -->
+  <title>Curso CSS</title>
+  <!-- Modern normalize -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
   <!-- syles.css -->
   <link rel="stylesheet" href="/project/landing_page_css/css/styles.css">
-  <!-- favicon -->
-  <link rel="icon" href="/project/landing_page_css/images/guru-icon-1.svg" type="image/svg+xml">
+  <!-- Favicon -->
+  <link rel="icon" href="/project/landing_page_css/images/favicon.png" type="image/png"> <!-- Indica al navegador -->
 </head>
 <body>
   <header class="hero">
-    <video autoplay muted loop playsinline class="hero__video">
-    <source src="/project/landing_page_css/videos/GHE   RECAP NO TEXT.mp4" type="video/mp4">
-    Tu navegador no soporta videos en HTML5.
-  </video>
-    <nav class="navbar container">
-      <div class="navbar__logo">  
-        <img src="/project/landing_page_css/images/guru-icon-1.svg" alt="Logo Gurú">
+    <nav class="nav container">
+      <div class="nav__logo">
+        <h2 class="nav__title">Curso CSS</h2>
       </div>
-      <ul class="navbar__link">
-        <li><a href="#">Temas</a></li>
-        <li><a href="#">Expositores</a></li>
-        <li><a href="#">Precios</a></li>
-        <li><a href="#">Experiencia</a></li>
+      <ul class="nav__link nav__link--menu">
+        <li class="nav__items">
+          <a href="" class="nav__links">Inicio</a>
+        </li>
+        <li class="nav__items">
+          <a href="" class="nav__links">Acerca de</a>
+        </li>
+        <li class="nav__items">
+          <a href="" class="nav__links">Contacto</a>
+        </li>
+        <li class="nav__items">
+          <a href="" class="nav__links">Blog</a>
+        </li>
+        <img src="/project/landing_page_css/images/close.svg" alt="close" class="nav__close">
       </ul>
       <div class="nav__menu">
+        <img src="/project/landing_page_css/images/menu.svg" alt="menu" class="nav__img">
       </div>
-
     </nav>
     <section class="hero__container container">
-      <h1 class="hero__title">GURÚ HI<br>
-        <span>EXPERIENCE</span>
-      </h1>
-      <ul class="hero__list">
-        <li>
-          <img src="/project/landing_page_css/images/calendario.svg" alt="Calendario">
-          <span>18 de setiembre</span>
-        </li>
-        <li>
-          <img src="/project/landing_page_css/images/reloj.svg" alt="Reloj">
-          <span>8:30 am - 6:30 pm</span>
-        </li>
-      </ul>
-      <div class="hero__buttons">
-        <a class="btn" href="https://wa.me/51978565512?text=quiero%20comprar%20mi%20entrada" target="_blank">
-          Contactar a un asesor
-        </a>
-        <a class="btn" href="https://experience.gurumotivacion.com/entradas/guru-hi-experience/" target="_blank">
-          Comprar entrada
-        </a>
-      </div>
+      <h1 class="hero__title">Aprender CSS desde CERO hasta dominarlo</h1>
+      <p class="hero__paragraph">Elige aprender CSS de una vez por todas, una vez que termines este curso serás capaz de crear cualquier layout con CSS y crear tus propias animaciones.</p>
+      <a href="#" class="cta">Comienza ahora</a>
     </section>
-
-  </header>
-  
+  </header>  
 </body>
 </html>
