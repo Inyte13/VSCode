@@ -28,8 +28,43 @@ body{
   grid-template-rows: 100px 1fr; /* La primera fila de 100px, la segudna lo restante*/
   background-image: linear-gradient(180deg, #0008 0%, #0008 100%), url(/project/landing_page_css/images/computer.jpg);
   background-size: cover; /* Adapte a la pantalla*/
+  color: #fff;
 
 }
 .nav{
-  --pading-container:0
+  --pading-container:0;
+  height: 100%;
+  display: flex; /* Para poner un elemento a lado del otro */
+  align-items: center; /* Para centrar verticalmente */  
+}
+.nav__title{
+  font-weight: 300;
+}
+.nav__link{
+  margin-left: auto;
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 2em
+}
+.nav__items{
+  list-style: none;
+}
+.nav__links{
+  color: #fff;
+  text-decoration: none;
+}
+.nav__menu{
+  margin-left: auto;
+  cursor: pointer; /* Cuando se posa el cursor, cambia */
+  display: none; /* Para que aparezca solo en moviles */
+}
+.nav__img{
+  display: block;
+  width: 30px;
+}
+.nav__close{
+  display: var(--show, none);
+  
 }
