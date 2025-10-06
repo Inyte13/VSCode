@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevJobs</title>
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
+</head>
+<body>  
+  <!-- Navegación -->
+  <header class="navbar">
+    <div class="navbar__brand"> <!-- Logo y nombre de DevJobs -->
+      <img class="navbar__brand-logo" src="./images/devjobs.png" alt="DevJobs logo" width="50">
+      <h1 class="navbar__brand-name">DevJobs</h1>
+    </div>
+    <nav class="navbar__nav">
+      <ul class="navbar__menu">
+        <li><a href="#buscar" class="navbar__link">Buscar</a></li>
+        <li><a href="#empleos" class="navbar__link">Empleos</a></li>
+        <li><a href="#empresas" class="navbar__link">Empresas</a></li>
+        <li><a href="#salarios" class="navbar__link">Salarios</a></li>
+      </ul>
+    </nav>
+    <div class="navbar__actions">
+        <a href="#publicar" class="btn btn--primary">Publicar un empleo</a>
+        <a href="#login" class="btn btn--secondary">Iniciar sesión</a>
+    </div>
+  </header>
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <div class="hero__content">
+        <img class="hero__image"src="/HtmlCss/DevJobs/images/persona-trabajando.jpg" alt="persona-trabajando">
+        <h2 class="hero__title">Encuentra el trabajo de tus sueños</h2>
+        <p class="hero__text">Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad.</p>
+        <form class="search">
+          <div class="search__group">
+            <label class="sr-only" for="search"></label><br>
+            <input type="text" id="search" name="search" placeholder="Buscar empleos por título, habilidad o empresa">
+            <button type="submit" class="btn btn-terteary">Buscar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <section class="features">
+      <h3 class="features__title">¿Por qué DevJobs</h3>
+      <p class="features__description">DevJobs es la principal bolsa de trabajo para desarrolladores. Conectamos a los desarrolladores con las mejores empresas del mundo.</p>
+      <div class="features__grid">
+        <article class="feature-card">
+          <img class="feature-card__icon" src="./images/maleta.svg" alt="Ícono de maleta">
+          <h4 class="feature-card__title">Encuentra el trabajo de tus sueños</h4>
+          <p class="feature-card__text">Busca miles de empleos de las mejores empresas de todo el mundo</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-card__icon" src="./images/people.svg" alt="Ícono de personas">
+          <h4 class="feature-card__title">Conecta con las mejores empresas</h4>
+          <p class="feature-card__text">Conecta con empresas que están contratando por tus habilidades</p>
+        </article>
+        <article class="feature-card">
+          <img class="feature-card__icon" src="./images/building.svg" alt="Ícono de edificio">
+          <h4 class="feature-card__title">Obtén el salario que mereces</h4>
+          <p class="feature-card__text">Obtén el salario que mereces con nuestra calculadora de salarios</p>
+        </article>
+      </div>
+    </section>  
+  </main>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2025 DevJobs. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
