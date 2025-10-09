@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #191919;
+      color: #fff;
+    }
+    .cajota{
+      background-color: #292;
+      min-height: 50vh;
+      gap: 1.5rem;
+      display: flex; /* Siempre al padre para afectar a los hijos */
+      align-items: center; /* Verticalmente */
+      /* flex-start, flex-end, center, stretch, baseline */
+      justify-content: space-between; /* Horizontalmente*/ 
+      /* flex-start, flex-end, center, space-around, space-between, space-evenly */
+      padding: 1rem;
+    }
+    .cajita{
+      padding: 2rem;
+      background-color: #389;
+      width: 150px;
+      height: 150px;
+      font-size: 5rem;
+    }
+    .cajita-3{
+      order: -1; /* Todos tienes un order 0, si pesa menos va atrás*/
+    }
+    .cajita-1{
+      align-self: flex-start; /* Se alinea el mismo */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="cajota">
+    <div class="cajita cajita-1">1</div>
+    <div class="cajita cajita-2">2</div>
+    <div class="cajita cajita-3">3</div>
+  </div>  
+  </body>
+</html>

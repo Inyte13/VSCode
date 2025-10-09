@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #191919;
+      color: #fff;
+    }
+    .container{
+      columns: 3 100px;
+      column-gap: 3rem;
+      column-rule: 0.1rem solid #888; /* width | style | color*/
+    }
+    .container h2{
+      column-span: all;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+  <p>
+    Hola a todos. Esto es un pequeño ejemplo donde podremos observar como funciona
+    el sistema de multicolumnas de CSS. Este contenido se basa en un párrafo con
+    <h2>Noticias</h2>
+    información que será separado en varias columnas.
+  </p>
+  <p>
+    A lo largo del artículo veremos sus diferentes características y propiedades,
+    y como podemos utilizarlo.
+  </p>
+  <p>
+    En los streams de <strong>ManzDev</strong> puedes echar un vistazo a estas y
+    otras cosas relacionadas con HTML, CSS y Javascript.
+  </p>
+</div>
+
+</body>
+</html>
