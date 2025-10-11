@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: #191919;
+      color: #fff;
+    }
+    .cajota{
+      background-color: #d92;
+      display: grid;
+      height: 100vh;
+      grid-template: repeat(2,100px) / repeat(2,100px);
+      gap: 10px 10px;
+      padding: 10px;
+      /* Por defecto, rellena todo la celda
+      justify-items: stretch;
+      align-items: stretch; */
+      justify-items: center; /* modifica -- los hijos dentro del grid */
+      align-items: center; /* modifica | los hijos dentro del grid */
+      justify-content: center; /* modifica -- el grid */ 
+      align-content: center; /* modifica | el grid */
+    }
+    .item{
+      background-color: #d89;
+    }
+  </style>
+</head>
+<body>
+  <div class="cajota">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cute Robots</title>
+<style>
+  body{
+    background-color: #191919;
+    color: #fff;
+  }
+  .galeria {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px;
+    flex-wrap: wrap;
+  }
+  .galeria img {
+    width: 300px;
+    height: 200px;
+    object-fit: scale-down;
+    border: 1px solid #ccc;
+    margin: 10px;
+  }
+  .btn__redondo {
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    font-family: Arial, sans-serif;
+  }
+  .btn__redondo:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+  <h1 class="class__title">Cute Robots</h1>
+  <div class="galeria">
+    <img src="./Images/robot1.png" alt="Image 1" name="robot1">
+    <!-- <img src="./Images/robot2.png" alt="Image 2" name="robot2">
+    <img src="./Images/robot3.png" alt="Image 3" name="robot3"> -->
+  </div>
+  <button class="btn__redondo" id="btn1">Cambia el color de la página!</button>
+  <button class="btn__redondo" id="btn2">Reiniciar</button>
+  <script src="./Dom.js"></script>
+  <script src="./Creando_elementos.js"></script>
+  <script src="Logica.js"></script>
+</body>
+</html>

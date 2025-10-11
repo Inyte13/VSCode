@@ -1,15 +1,12 @@
-// Con un objeto (si se podía xd)
-let persona={name: "Oriana", age: 19, dni: "1893493"}
-for(let value in persona){ // Recorre la key
-  console.log(value)
-}
+// NO puedo recorrer los values o keys, sin especificar
 
-// Con un array
+// Con un array, se recorre los valores
 let names=["Mafer", "Lucía", "Camila", "Paula", "Carlos"]
-for(let name of names){
+for(let name of names){ // "Mafer", "Lucía", "Camila", "Paula", "Carlos"
   console.log(name)
 }
-// Igual que un Spread
+
+// Igual que un spread, saca cada c pero no lo convierte en arr
 let name="Oriana"
 for(let c of name){
   console.log(c)
