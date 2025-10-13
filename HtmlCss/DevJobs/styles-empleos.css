@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+}
+:root{
+  --azul-principal:#101922;
+  --azul-clarito:#1e293b;
+  --celeste-clarito:#1170cf;
+  --gris:#334155;
+}
+body{
+  background-color: var(--azul-principal);
+  color: #fff;
+}
+/* Navegación */
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: var(--azul-principal);
+  padding: 1rem 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+}
+.navbar__brand{
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.navbar__brand-name{
+  font-weight: bold;
+}
+.navbar__menu{
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+.navbar__link{
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  /* transition: color 0.3s; */
+}
+.navbar__link:hover{
+  color: var(--celeste-clarito);
+}
+.navbar__actions{
+  display: flex;
+}
+.btn{
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0 5px;
+  /* transition: background 0.3s; */
+}
+.btn--primary{
+  background-color: var(--azul-clarito);
+  color: var(--celeste-clarito);
+}
+/* Hero */
+.hero{
+  min-height: 30vh;
+}
+.hero header{
+  text-align: center;
+  padding: 2rem 3rem;
+}
+.hero header h1{
+  font-size: 3rem;
+  padding-bottom: 1rem;
+}
+.hero header p{
+  font-size: 1.1rem;
+}
+.hero__search{
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 8px;
+  max-width: 1000px;
+  width: 100%;
+  margin: auto;
+}
+.hero__search input{
+  width: 100%;
+  border: 0;
+  border-radius: 10px;
+  padding: 16px 48px 16px 20px;
+  outline: none;
+  background-color: var(--azul-clarito);
+  color: #fff
+}
+
+.hero__search .btn__search {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.btn__search svg{
+  color: var(--gris);
+}
+.filters{
+  max-width: 984px;
+  margin: 0 auto;
+}
+.filters__list{
+  display: flex;
+  align-content: center;
+  justify-content: start;
+  list-style: none;
+  gap: 1rem;
+  margin: 0 auto;
+  padding-top: 0.5rem;
+}
+.filters__button{
+  padding: 0.5rem 2rem 0.5rem 0.7rem;
+  background-color: var(--azul-clarito);
+}

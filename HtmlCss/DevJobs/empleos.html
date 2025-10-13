@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevJobs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
+  <link rel="stylesheet" href="./styles-empleos.css">
+</head>
+<body>
+    <!-- Navegación -->
+  <header class="navbar">
+    <div class="navbar__brand"> <!-- Logo y nombre de DevJobs -->
+      <img class="navbar__brand-logo" src="./images/devjobs.png" alt="DevJobs logo" width="50">
+      <h1 class="navbar__brand-name">DevJobs</h1>
+    </div>
+    <nav>
+      <ul class="navbar__menu">
+        <li><a href="#empleos" class="navbar__link">Empleos</a></li>
+        <li><a href="#empresas" class="navbar__link">Empresas</a></li>
+        <li><a href="#salarios" class="navbar__link">Salarios</a></li>
+      </ul>
+    </nav>
+    <div class="navbar__actions">
+        <a href="#publicar" class="btn btn--primary">Subir CV</a>
+        <button></button>
+    </div>
+  </header>
+  <!-- Hero -->
+  <main>
+    <section class="hero">
+      <header>
+        <h1 class="hero__title">Encuentra tu próximo trabajo</h1>
+        <p class="hero__text">Explora miles de oportunidades en el sector tecnológico.</p>  
+      </header>
+      <form class="hero__search" action="/buscar" method="GET" role="search" aria-label="Buscar en el sitio">
+        <input id="q" name="q" type="search" placeholder="Buscar trabajos, empresas o habilidades" aria-label="Buscar" autocomplete="off">
+        <button type="submit" class="btn__search" aria-label="Enviar búsqueda">
+          <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-  outline icon-tabler-search">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" />
+          </svg>
+        </button>
+      </form> 
+      <nav class="filters">
+        <ul class="filters__list">
+          <li><button type="button" class="filters__button">Tecnología</button></li>
+          <li><button type="button" class="filters__button">Ubicación</button></li>
+          <li><button type="button" class="filters__button">Tipo de contrato</button></li>
+          <li><button type="button" class="filters__button">Nivel de experiencia</button></li>
+        </ul>
+      </nav>
+    </section>
+    <section class="empleo">
+      <h2 class="empleo__title">Resultados de búsqueda</h2>
+      <div class="empleo__list">
+        <article class="empleo">
+          <header>
+            <h3 class="empleo__title">Ingeniero de software</h3>
+            <p class="empleo__empresa">Tech Solutions Inc. | <span class="empleo__lugar">Remoto</span></p>
+          </header>
+          <p class="empleo__descripcion">Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.</p>
+          <button class="empleo__aplicar">Aplicar</button>
+        </article>
+        <article class="empleo">
+          <header>
+            <h3 class="empleo__title">Analista de datos</h3>
+            <p class="empleo__empresa">Data Driven Co. | <span class="empleo__lugar">Ciudad de México</span></p>
+          </header>
+          <p class="empleo__descripcion">Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
+          <button class="empleo__aplicar">Aplicar</button>
+        </article>
+        <article class="empleo">
+          <header>
+            <h3 class="empleo__title">Desarrollador Mobile</h3>
+            <p class="empleo__empresa">Mobile Apps Ltd | <span class="empleo__lugar">Guadalajara</span></p>
+          </header>
+          <p class="empleo__descripcion">Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
+          <button class="empleo__aplicar">Aplicar</button>
+        </article>
+        <article class="empleo">
+          <header>
+            <h3 class="empleo__title">Ingeniero DevOps</h3>
+            <p class="empleo__empresa">Cloud Services SA | <span class="empleo__lugar">Remoto</span></p>
+          </header>
+          <p class="empleo__descripcion">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.</p>
+          <button class="empleo__aplicar">Aplicar</button>
+        </article>
+      </div>
+      <nav class="pagination">
+        <a href="#" class="pagination__prev">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-left"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M15 6l-6 6l6 6" /></svg>
+        </a>
+        <a href="#" class="pagination__number">1</a>
+        <a href="#" class="pagination__number">2</a>
+        <a href="#" class="pagination__number">3</a>
+        <a href="#" class="pagination__number">4</a>
+        <a href="#" class="pagination__number">5</a>
+        <a href="#" class="pagination__next">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-right"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 6l6 6l-6 6" /></svg>
+        </a>
+      </nav>
+    </section>
+  </main>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2025 DevJobs. Todos los derechos reservados.</p>
+  </footer>
+  
+</body>
+</html>
