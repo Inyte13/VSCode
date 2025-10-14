@@ -20,7 +20,7 @@ body{
   justify-content: space-around;
   background-color: var(--azul-principal);
   padding: 1rem 2rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 .navbar__brand{
   display: flex;
@@ -51,7 +51,7 @@ body{
 }
 .btn{
   padding: 0.5rem 1rem;
-  border-radius: 8px;
+  border-radius: 10px;
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 500;
@@ -81,7 +81,7 @@ body{
   position: relative;
   z-index: 1;
   text-align: center;
-  padding: 8px;
+  padding: 0.5rem;
   max-width: 1000px;
   width: 100%;
   margin: auto;
@@ -110,8 +110,9 @@ body{
   color: var(--gris);
 }
 .filters{
-  max-width: 984px;
+  max-width: 1000px;
   margin: 0 auto;
+  padding: 0.5rem;
 }
 .filters__list{
   display: flex;
@@ -123,6 +124,34 @@ body{
   padding-top: 0.5rem;
 }
 .filters__button{
-  padding: 0.5rem 2rem 0.5rem 0.7rem;
+  padding: 0.6rem 0.7rem;
   background-color: var(--azul-clarito);
+  color: #fff;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.empleo__container{
+  max-width: 1000px;
+  padding: 0.5rem;
+  margin: auto;
+}
+.empleo__list{
+  margin-top: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: none;
+}
+.empleo__list article{
+  padding: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.empleo{
+  display: flex;
+  gap: 2rem ;
+  flex-wrap: wrap;
+}
+.empleo__column{
+  max-width: 800px;
 }

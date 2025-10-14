@@ -43,47 +43,79 @@
       </form> 
       <nav class="filters">
         <ul class="filters__list">
-          <li><button type="button" class="filters__button">Tecnología</button></li>
-          <li><button type="button" class="filters__button">Ubicación</button></li>
-          <li><button type="button" class="filters__button">Tipo de contrato</button></li>
-          <li><button type="button" class="filters__button">Nivel de experiencia</button></li>
+          <li><button type="button" class="filters__button">Tecnología
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </button></li>
+          <li><button type="button" class="filters__button">Ubicación
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </button></li>
+          <li><button type="button" class="filters__button">Tipo de contrato
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </button></li>
+          <li><button type="button" class="filters__button">Nivel de experiencia
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
+          </button></li>
         </ul>
       </nav>
     </section>
-    <section class="empleo">
+    <section class="empleo__container">
       <h2 class="empleo__title">Resultados de búsqueda</h2>
       <div class="empleo__list">
-        <article class="empleo">
-          <header>
-            <h3 class="empleo__title">Ingeniero de software</h3>
-            <p class="empleo__empresa">Tech Solutions Inc. | <span class="empleo__lugar">Remoto</span></p>
-          </header>
-          <p class="empleo__descripcion">Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.</p>
-          <button class="empleo__aplicar">Aplicar</button>
+        <article>
+          <div class="empleo">
+            <div class="empleo__column">
+              <header>
+                <h3 class="empleo__title">Ingeniero de software</h3>
+                <p class="empleo__empresa">Tech Solutions Inc. | <span class="empleo__lugar">Remoto</span></p>
+              </header><br
+              <p class="empleo__descripcion">Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.</p>
+            </div>
+            <div class="empleo__column">
+              <button class="empleo__aplicar">Aplicar</button>
+            </div>
+          </div>
         </article>
-        <article class="empleo">
-          <header>
-            <h3 class="empleo__title">Analista de datos</h3>
-            <p class="empleo__empresa">Data Driven Co. | <span class="empleo__lugar">Ciudad de México</span></p>
-          </header>
-          <p class="empleo__descripcion">Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
-          <button class="empleo__aplicar">Aplicar</button>
+        <article>
+          <div class="empleo">
+            <div class="empleo__column">
+              <header>
+                <h3 class="empleo__title">Analista de Datos</h3>
+                <p class="empleo__empresa">Data Driven Co. | <span class="empleo__lugar">Ciudad de México</span></p>
+              </header>
+              <p class="empleo__descripcion">Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
+            </div>
+            <div class="empleo__column">
+              <button class="empleo__aplicar">Aplicar</button>
+            </div>
+          </div>
         </article>
-        <article class="empleo">
-          <header>
-            <h3 class="empleo__title">Desarrollador Mobile</h3>
-            <p class="empleo__empresa">Mobile Apps Ltd | <span class="empleo__lugar">Guadalajara</span></p>
-          </header>
-          <p class="empleo__descripcion">Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
-          <button class="empleo__aplicar">Aplicar</button>
+        <article>
+          <div class="empleo">
+            <div class="empleo__column">
+              <header>
+                <h3 class="empleo__title">Desarrollador de Aplicaciones Móviles</h3>
+                <p class="empleo__empresa">Mobile Apps Ltd. | <span class="empleo__lugar">Guadalajara</span></p>
+              </header>
+              <p class="empleo__descripcion">Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
+            </div>
+            <div class="empleo__column">
+              <button class="empleo__aplicar">Aplicar</button>
+            </div>
+          </div>
         </article>
-        <article class="empleo">
-          <header>
-            <h3 class="empleo__title">Ingeniero DevOps</h3>
-            <p class="empleo__empresa">Cloud Services SA | <span class="empleo__lugar">Remoto</span></p>
-          </header>
-          <p class="empleo__descripcion">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.</p>
-          <button class="empleo__aplicar">Aplicar</button>
+        <article>
+          <div class="empleo">
+            <div class="empleo__column">
+              <header>
+                <h3 class="empleo__title">Ingeniero de DevOps</h3>
+                <p class="empleo__empresa">Cloud Services SA | <span class="empleo__lugar">Remoto</span></p>
+              </header>
+              <p class="empleo__descripcion">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.</p>
+            </div>
+            <div class="empleo__column">
+              <button class="empleo__aplicar">Aplicar</button>
+            </div>
+          </div>
         </article>
       </div>
       <nav class="pagination">
