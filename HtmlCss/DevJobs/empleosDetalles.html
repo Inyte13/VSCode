@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DevJobs</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
+  <link rel="stylesheet" href="./styles-empleosDetalles.css">
+  <!-- <script type="module" src="./index.js"></script> -->
+  <!-- <script type="module">
+    const btn1=document.querySelector(".empleo__aplicar")
+    btn1.addEventListener('click', function(){alert("Apretaste el botón")})
+  </script> -->
+</head>
+<body>
+  <!-- Navegación -->
+  <header class="navbar">
+    <div class="navbar__brand"> <!-- Logo y nombre de DevJobs -->
+      <img class="navbar__brand-logo" src="./images/devjobs.png" alt="DevJobs logo" width="50">
+      <h1 class="navbar__brand-name">DevJobs</h1>
+    </div>
+    <nav>
+      <ul class="navbar__menu">
+        <li><a href="#empleos" class="navbar__link">Empleos</a></li>
+        <li><a href="#empresas" class="navbar__link">Empresas</a></li>
+        <li><a href="#salarios" class="navbar__link">Salarios</a></li>
+      </ul>
+    </nav>
+    <div class="navbar__actions">
+        <a href="#publicar" class="btn btn--primary">Subir CV</a>
+        <button></button>
+    </div>
+  </header>
+  <!-- Hero -->
+  <main>
+    <div class="nav__main">
+      <nav>
+        <a href="">Empleos</a>
+        <span class="nav__separacion">/</span>
+        <span class="nav__actual">Ingeniero de software</span>
+      </nav>
+    </div>
+    <article>
+      <header class="article__header">
+        <div class="article__column1">
+          <h1 class="article__title">Ingeniero de software</h1>
+          <p class="article__empresa">Tech Solution Inc. | <span class="article__modalida">Remoto</span></p>
+        </div>
+        <div>
+          <button class="btn__aplicar">Aplicar ahora</button>
+        </div>
+      </header>
+      <div>
+        <section class="article__descripcion">
+          <h2>Descripción del puesto</h2>
+          <p>Tech Solutions Inc. está buscando un Ingeniero de Software Senior altamente motivado y experimentado para unirse a nuestro equipo remoto. El candidato ideal tendrá una sólida formación en desarrollo de software, con experiencia en el diseño, desarrollo e implementación de soluciones de software escalables y de alto rendimiento. Como Ingeniero de Software Senior, usted será responsable de liderar proyectos de desarrollo, mentorizar a ingenieros junior y colaborar con equipos multifuncionales para entregar productos de software de alta calidad.</p>
+        </section>
+        <section class="article__responsabilidades">
+          <h2>Responsabilidades</h2>
+          <ul>
+            <li>Diseñar, desarrollar y mantener aplicaciones web utilizando tecnologías modernas.</li>
+            <li>Colaborar con equipos de producto y diseño para definir y entregar nuevas características.</li>
+            <li>Escribir código limpio, eficiente y bien documentado.</li>
+            <li>Realizar revisiones de código y proporcionar retroalimentación constructiva a los miembros del equipo.</li>
+          </ul>
+        </section>
+        <section class="article__requisitos">
+          <h2>Requisitos</h2>
+          <ul>
+            <li>Licenciatura en Informática o campo relacionado.</li>
+            <li>Mínimo de 5 años de experiencia en desarrollo de software.</li>
+            <li>Experiencia con frameworks de JavaScript (por ejemplo, React, Angular, Vue.js).</li>
+            <li>Familiaridad con metodologías ágiles y herramientas de control de versiones (por ejemplo, Git).</li>
+          </ul>
+        </section>
+        <section class="article__acercade">
+          <h2>Acerca de la empresa</h2>
+          <p>Tech Solutions Inc. es una empresa de tecnología innovadora que se centra en la creación de soluciones de software de vanguardia para diversas industrias. Estamos comprometidos con el fomento de un entorno de trabajo colaborativo e inclusivo donde cada empleado pueda prosperar y crecer profesionalmente. Ofrecemos salarios competitivos, beneficios integrales y oportunidades de desarrollo profesional continuo.</p>
+        </section>
+      </div>
+      <div class="article__btn">
+        <button class="btn__aplicar">Aplicar ahora</button>
+      </div>
+    </article>
+  </main>
+  <footer class="footer">
+    <p class="footer__text">&copy; 2025 DevJobs. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
