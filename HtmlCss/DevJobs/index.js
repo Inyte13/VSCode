@@ -10,7 +10,7 @@
 
 // Con un solo evento
 const empleosList=document.querySelector(".empleo__list")
-// ?: Optional chaining
+// ?: Optional chaining, solo se ejecuta si encuentra .emplo__list existe (no es null ni undefined)
 empleosList?.addEventListener("click",function(click){
   const btn=click.target
   if(btn.classList.contains("empleo__aplicar")){

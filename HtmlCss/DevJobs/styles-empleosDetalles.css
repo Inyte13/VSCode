@@ -89,12 +89,63 @@ main{
   }
   article{
     padding: 2rem;
+    background-color: #111825;
+    border-radius: 10px;
     .article__header{
       padding-bottom: 2rem;
       display: flex;
       gap: 1rem;
       justify-content: space-between;
       flex-wrap: wrap;
+      .article__title{
+        padding-bottom: 0.3rem;
+        font-size: 2.5rem;
+      }
+      .article__empresa{
+        color: #fff8;
+        font-size: 1.2rem;
+      }
+    }
+    .article__descripcion, .article__responsabilidades, .article__requisitos, .article__acercade{
+      padding-bottom: 2rem;
+      .article__descripcion-title{
+        padding-bottom: 1.5rem;
+        font-size: 1.6rem;
+      }
+      .article__descripcion-p{
+        line-height: 1.6rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+      .article__descripcion-ul{
+        line-height: 2rem;
+        color: rgba(255, 255, 255, 0.7);
+        list-style-type: none;
+
+
+      }
+    }
+    .btn__aplicar{
+      border: none;
+      padding: 0.7rem 1.2rem;
+      color: #fff;
+      background-color: var(--celeste-clarito);
+      font-weight: 500;
+      border-radius: 10px;
+      &:hover{
+        background-color: color-mix(in srgb, var(--celeste-clarito) 70%,transparent);
+      }
+      &.clickeado{
+      background-color: #4a5;
+      pointer-events: none;
+      opacity: 0.6;
+      } 
+    }
+    .article__contenido{
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .article__btn{
+      text-align: end;
+      padding-top: 2rem;
     }
 
   }
