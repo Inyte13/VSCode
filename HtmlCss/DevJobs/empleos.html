@@ -6,7 +6,8 @@
   <title>DevJobs</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
   <link rel="stylesheet" href="./styles-empleos.css">
-  <script type="module" src="./index.js"></script>
+  <script type="module" src="./aplicar-empleos.js"></script>
+  <script type="module" src="./filtrar-empleos.js"></script>
   <!-- <script type="module">
     const btn1=document.querySelector(".empleo__aplicar")
     btn1.addEventListener('click', function(){alert("Apretaste el botón")})
@@ -34,33 +35,63 @@
   <!-- Hero -->
   <main>
     <section class="hero">
+      
       <header>
         <h1 class="hero__title">Encuentra tu próximo trabajo</h1>
         <p class="hero__text">Explora miles de oportunidades en el sector tecnológico.</p>  
       </header>
-      <form class="hero__search" action="/buscar" method="GET" role="search" aria-label="Buscar en el sitio">
-        <input id="q" name="q" type="search" placeholder="Buscar trabajos, empresas o habilidades" aria-label="Buscar" autocomplete="off">
+
+      <form class="hero__search" role="search" aria-label="Buscar en el sitio">
+        <input name="search" id="search" required type="search" placeholder="Buscar trabajos, empresas o habilidades" aria-label="Buscar">
         <button type="submit" class="btn__search" aria-label="Enviar búsqueda">
           <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-  outline icon-tabler-search">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" />
           </svg>
         </button>
       </form> 
+
       <nav class="filters">
-        <ul class="filters__list">
-          <li><button type="button" class="filters__button">Tecnología
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-          </button></li>
-          <li><button type="button" class="filters__button">Ubicación
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-          </button></li>
-          <li><button type="button" class="filters__button">Tipo de contrato
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-          </button></li>
-          <li><button type="button" class="filters__button">Nivel de experiencia
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-chevron-down"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg>
-          </button></li>
-        </ul>
+
+        <select name="technology" id="filter-technology">
+          <option value="">Tecnología</option>
+          <option value="javascript">JavaScript</option>
+          <option value="python">Python</option>
+          <option value="react">React</option>
+          <option value="nodejs">Node.js</option>
+          <option value="java">Java</option>
+          <option value="csharp">C#</option>
+          <option value="c">C</option>
+          <option value="c++">C++</option>
+          <option value="ruby">Ruby</option>
+          <option value="php">PHP</option>
+        </select>
+
+        <select name="location" id="filter-location">
+          <option value="">Ubicación</option>
+          <option value="remoto">Remoto</option>
+          <option value="cdmx">Ciudad de México</option>
+          <option value="guadalajara">Guadalajara</option>
+          <option value="monterrey">Monterrey</option>
+          <option value="barcelona">Barcelona</option>
+        </select>
+
+        <select name="contract" id="filter-contract">
+          <option value="">Tipo de contrato</option>
+          <option value="junior">Tiempo completo</option>
+          <option value="mid">Medio tiempo</option>
+          <option value="senior">Freelance</option>
+          <option value="lead">Prácticas</option>
+          <option value="lead">Temporal</option>
+        </select>
+
+        <select name="experience" id="filter-experience-level">
+          <option value="">Nivel de experiencia</option>
+          <option value="junior">Junior</option>
+          <option value="mid">Semi Senior</option>
+          <option value="senior">Senior</option>
+          <option value="lead">Líder técnico</option>
+        </select>
+
       </nav>
     </section>
     <section class="empleo__container">
@@ -71,7 +102,7 @@
             <div class="empleo__column1">
               <header>
                 <h3 class="empleo__title">Ingeniero de software</h3>
-                <p class="empleo__empresa">Tech Solutions Inc. | <span class="empleo__lugar">Remoto</span></p>
+                <p class="empleo__empresa">Tech Solutions Inc. | <span data-value="remoto" class="empleo__lugar">Remoto</span></p>
               </header>
               <p class="empleo__descripcion">Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.</p>
             </div>
@@ -85,7 +116,7 @@
             <div class="empleo__column1">
               <header>
                 <h3 class="empleo__title">Analista de Datos</h3>
-                <p class="empleo__empresa">Data Driven Co. | <span class="empleo__lugar">Ciudad de México</span></p>
+                <p class="empleo__empresa">Data Driven Co. | <span data-value="cdmx" class="empleo__lugar">Ciudad de México</span></p>
               </header>
               <p class="empleo__descripcion">Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
             </div>
@@ -99,7 +130,7 @@
             <div class="empleo__column1">
               <header>
                 <h3 class="empleo__title">Desarrollador de Aplicaciones Móviles</h3>
-                <p class="empleo__empresa">Mobile Apps Ltd. | <span class="empleo__lugar">Guadalajara</span></p>
+                <p class="empleo__empresa">Mobile Apps Ltd. | <span data-value="guadalajara" class="empleo__lugar">Guadalajara</span></p>
               </header>
               <p class="empleo__descripcion">Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
             </div>
@@ -113,7 +144,7 @@
             <div class="empleo__column1">
               <header>
                 <h3 class="empleo__title">Ingeniero de DevOps</h3>
-                <p class="empleo__empresa">Cloud Services SA | <span class="empleo__lugar">Remoto</span></p>
+                <p class="empleo__empresa">Cloud Services SA | <span data-value="remoto" class="empleo__lugar">Remoto</span></p>
               </header>
               <p class="empleo__descripcion">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.</p>
             </div>
