@@ -6,8 +6,7 @@
   <title>DevJobs</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modern-normalize/modern-normalize.css">
   <link rel="stylesheet" href="./styles-empleos.css">
-  <script type="module" src="./aplicar-empleos.js"></script>
-  <script type="module" src="./filtrar-empleos.js"></script>
+    <script type="module" src="./main.js"></script>
   <!-- <script type="module">
     const btn1=document.querySelector(".empleo__aplicar")
     btn1.addEventListener('click', function(){alert("Apretaste el botón")})
@@ -29,7 +28,9 @@
     </nav>
     <div class="navbar__actions">
         <a href="#publicar" class="btn btn--primary">Subir CV</a>
-        <button></button>
+        <div>
+          <devjobs-avatar></devjobs-avatar>
+        </div>
     </div>
   </header>
   <!-- Hero -->
@@ -97,62 +98,6 @@
     <section class="empleo__container">
       <h2 class="empleo__title">Resultados de búsqueda</h2>
       <div class="empleo__list">
-        <article>
-          <div class="empleo">
-            <div class="empleo__column1">
-              <header>
-                <h3 class="empleo__title">Ingeniero de software</h3>
-                <p class="empleo__empresa">Tech Solutions Inc. | <span data-value="remoto" class="empleo__lugar">Remoto</span></p>
-              </header>
-              <p class="empleo__descripcion">Buscamos un ingeniero de software con experiencia en desarrollo web y conocimientos en JavaScript, React y Node.js. El candidato ideal debe ser capaz de trabajar en equipo y tener buenas habilidades de comunicación.</p>
-            </div>
-            <div class="empleo__column2">
-              <button class="empleo__aplicar" >Aplicar</button>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="empleo">
-            <div class="empleo__column1">
-              <header>
-                <h3 class="empleo__title">Analista de Datos</h3>
-                <p class="empleo__empresa">Data Driven Co. | <span data-value="cdmx" class="empleo__lugar">Ciudad de México</span></p>
-              </header>
-              <p class="empleo__descripcion">Estamos buscando un analista de datos con experiencia en el manejo de grandes conjuntos de datos y herramientas de visualización. Se requiere conocimiento en SQL, Python y R.</p>
-            </div>
-            <div class="empleo__column2">
-              <button class="empleo__aplicar">Aplicar</button>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="empleo">
-            <div class="empleo__column1">
-              <header>
-                <h3 class="empleo__title">Desarrollador de Aplicaciones Móviles</h3>
-                <p class="empleo__empresa">Mobile Apps Ltd. | <span data-value="guadalajara" class="empleo__lugar">Guadalajara</span></p>
-              </header>
-              <p class="empleo__descripcion">Buscamos un desarrollador de aplicaciones móviles con experiencia en iOS y/o Android. El candidato debe tener conocimientos en Swift, Kotlin y el desarrollo de interfaces de usuario.</p>
-            </div>
-            <div class="empleo__column2">
-              <button class="empleo__aplicar">Aplicar</button>
-            </div>
-          </div>
-        </article>
-        <article>
-          <div class="empleo">
-            <div class="empleo__column1">
-              <header>
-                <h3 class="empleo__title">Ingeniero de DevOps</h3>
-                <p class="empleo__empresa">Cloud Services SA | <span data-value="remoto" class="empleo__lugar">Remoto</span></p>
-              </header>
-              <p class="empleo__descripcion">Estamos buscando un ingeniero de DevOps con experiencia en la gestión de infraestructuras en la nube, automatización de procesos y herramientas de integración continua. Se requiere conocimiento en AWS, Azure o GCP.</p>
-            </div>
-            <div class="empleo__column2">
-              <button class="empleo__aplicar">Aplicar</button>
-            </div>
-          </div>
-        </article>
       </div>
       <nav class="pagination">
         <a href="#" class="pagination__prev">

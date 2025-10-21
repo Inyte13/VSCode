@@ -5,7 +5,7 @@ filtersSection?.addEventListener("change",function(){ // Cada vez que suceda un 
   const filterOption=filtersSection.value   // Guardamos el valor que eligió
   const articles=document.querySelectorAll("article") // Guardamos los articles en una NodeList 
   articles.forEach(function(article){ // Los recorremos con forEach
-    const lugar=article.querySelector(".empleo__lugar")?.getAttribute("data-value") // Guardamos el lugar si existe un empleo__lugar y obtenemos su data-value
+    const lugar=article.querySelector(".empleo__lugar")?.getAttribute("data-lugar") // Guardamos el lugar si existe un empleo__lugar y obtenemos su data-value
     const isShow=filterOption===""||filterOption===lugar
     article.classList.toggle("ocultar",isShow===false) // La clase ocultar se muestra si isShow es false
     // if(filterOption===""||filterOption===lugar){
