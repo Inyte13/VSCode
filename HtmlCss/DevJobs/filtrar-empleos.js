@@ -2,8 +2,8 @@
 const filtersSection=document.querySelector("#filter-location")
 
 filtersSection?.addEventListener("change",function(){ // Cada vez que suceda un cambio...
-  const filterOption=filtersSection.value   // Guardamos el valor que eligió
   const articles=document.querySelectorAll("article") // Guardamos los articles en una NodeList 
+  const filterOption=filtersSection.value   // Guardamos el valor que eligió
   articles.forEach(function(article){ // Los recorremos con forEach
     const lugar=article.querySelector(".empleo__lugar")?.getAttribute("data-lugar") // Guardamos el lugar si existe un empleo__lugar y obtenemos su data-value
     const isShow=filterOption===""||filterOption===lugar
@@ -17,11 +17,6 @@ filtersSection?.addEventListener("change",function(){ // Cada vez que suceda un 
 })
 
 // Mas filtros (como "change", "click")
-
-// const search=document.querySelector("#search")
-// search.addEventListener("input",()=>{
-//   console.log(search.value)
-// })
 
 // search.addEventListener("blur", ()=>{
 //   console.log("Se perdió el foco")

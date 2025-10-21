@@ -97,3 +97,6 @@ let torf3=nums.every((x=>{return x%2===0})) // false
 // reduce, recibe una función callback donde usa de 2 en 2
 let suma=nums.reduce((x,y)=>{return x+y},0) // x=0, y=nums[0]
 
+// filter, recorre arr y devuelve uno nuevo que cumplan la condición
+let pares=numeros.filter(function(x){return x%2===0})
+//  pares=numeros.filter((x)=>{x%2===0})

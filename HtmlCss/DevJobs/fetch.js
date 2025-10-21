@@ -1,7 +1,5 @@
 const empleoList=document.querySelector(".empleo__list")
-fetch("./data.json").then(function(response){
-    return response.json()
-  }).then((empleos)=>{
+fetch("./data.json").then(function(response){return response.json()}).then((empleos)=>{
     empleos.forEach(empleo=>{
       const articulo=document.createElement("article")
       articulo.innerHTML=`
