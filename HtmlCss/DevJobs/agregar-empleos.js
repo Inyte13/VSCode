@@ -1,7 +1,11 @@
 const empleoList=document.querySelector(".empleo__list")
-fetch("./data.json").then(function(response){return response.json()}).then((empleos)=>{
+const busqueda=document.querySelector("#search")
+fetch("./data.json")
+  .then((response)=>{return response.json()})
+  .then((empleos)=>{
     empleos.forEach(empleo=>{
       const articulo=document.createElement("article")
+      articulo.setAttribute("data-id", empleo.id)
       articulo.innerHTML=`
       <div class="empleo" data-nivel="${empleo.data.nivel}" data-tecnologia="${empleo.data.technology}">
         <div class="empleo__column1">
@@ -17,4 +21,19 @@ fetch("./data.json").then(function(response){return response.json()}).then((empl
       </div>`
       empleoList.appendChild(articulo)
     })
-  })
+    busqueda.addEventListener("input",function(){
+      let articles=document.querySelectorAll("article")
+      let inputActual=busqueda.value.toLowerCase()
+      const resultados=empleos.filter((actual)=>{
+        return actual.titulo.toLowerCase().includes(inputActual)
+      })
+      articles.forEach(a=>{a.classList.add("ocultar")})
+      resultados.forEach(r=>{
+        const articuloSeleccionado=document.querySelector(`[data-id="${r.id}"]`)
+        if(articuloSeleccionado!==null){
+          articuloSeleccionado.classList.remove("ocultar")
+        }
+      })
+      console.log(resultados)
+    })
+})
