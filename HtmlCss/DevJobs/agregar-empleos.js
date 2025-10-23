@@ -1,4 +1,4 @@
-const empleoList=document.querySelector(".empleo__list")
+const empleoList=document.querySelector(".empleo__list") // Guardamos el div vacío que contendrá a todos los empleos
 const busqueda=document.querySelector("#search")
 fetch("./data.json")
   .then((response)=>{return response.json()})
@@ -7,7 +7,7 @@ fetch("./data.json")
       const articulo=document.createElement("article")
       articulo.setAttribute("data-id", empleo.id)
       articulo.innerHTML=`
-      <div class="empleo" data-nivel="${empleo.data.nivel}" data-tecnologia="${empleo.data.technology}">
+      <div class="empleo" data-nivel="${empleo.data.nivel}" data-tecnologia="${empleo.data.technology.join(",")}">
         <div class="empleo__column1">
           <header>
             <h3 class="empleo__title">${empleo.titulo}</h3>
@@ -21,6 +21,7 @@ fetch("./data.json")
       </div>`
       empleoList.appendChild(articulo)
     })
+    
     busqueda.addEventListener("input",function(){
       let articles=document.querySelectorAll("article")
       let inputActual=busqueda.value.toLowerCase()
