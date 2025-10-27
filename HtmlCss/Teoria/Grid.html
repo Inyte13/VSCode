@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
+    *{
+      margin: 0;
+    }
     body{
       background-color: #191919;
       color: #fff;
@@ -14,15 +17,18 @@
       min-height: 50vh;
       display: grid;
       /* grid-template-columns: repeat(2,1fr) 1fr; Los tres fr suman 3, y se reparte según se indique 1/3, 1/3, 1/3 */
-      grid-template-columns: repeat(auto-fill,minmax(100px, 1fr)); /* Adaptable, cuidando 100px */
+      /* grid-template-columns: repeat(auto-fill,minmax(100px, 1fr)); Adaptable, cuidando 100px */
       /* auto-fit, quiere rellenar todo*/
-      grid-template-rows: repeat(3,1fr);
-      grid-template: repeat(3,1fr) / repeat(auto-fill,minmax(100px, 1fr)); /* rows / columns*/
+      /* grid-template-rows: repeat(3,1fr); */
+      grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+      grid-template-rows: repeat(100px);
+      /* grid-template: repeat(3,1fr) / repeat(auto-fill,minmax(100px, 1fr)); rows / columns */
       gap: 2rem 1rem; /* row column */
-    }
-    .child{
-      background-color: #286;
-      font-size: 2rem;
+      
+      .child{
+        background-color: #286;
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
