@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<script type="module">
+  let btnAnadir=document.querySelector(".btn__anadir")
+  btnAnadir.addEventListener("click",(event)=>{
+    event.preventDefault();
+    let input=document.querySelector("#tarea")
+    let lista=document.querySelector("ul")
+    let item=document.createElement("li")
+    item.textContent=input.value
+    let btnEliminar=document.createElement("button")
+    btnEliminar.textContent="Eliminar"
+    btnEliminar.classList.add("btn__eliminar")
+    item.appendChild(btnEliminar)
+    lista.appendChild(item)
+    input.value=""
+  })
+  let areaUl=document.querySelector("ul")
+  areaUl?.addEventListener("click",(event)=>{
+    const btn=event.target
+    if(btn.classList.contains("btn__eliminar")){
+      btn.parentElement.remove()
+    }
+  })
+
+</script>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --negro-principal: #171819aa;
+    --negro-secundario: #272829;
+    --rojo-principal: #f33;
+    --rojo-secundario: #f33a
+  }
+  body{
+    background-color: #191919;
+    color: #fff;
+    div{
+      margin: 2rem auto;
+      background-color: var(--negro-secundario);
+      max-width: 300px;
+      border-radius: 5px;
+      box-shadow: 0 0 40px 0 #000b;
+      gap: 1rem;
+      form{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 1rem 1.2rem;
+
+        input{
+          padding: 7px;
+          background-color: var(--negro-principal);
+          border: none;
+          color: #fffb;
+          width: 75%;
+        }
+      }
+      ul{
+        list-style: none;
+        padding: 1rem 1.2rem;
+        color: #fffb;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem 2rem;
+        align-items: center;
+        li{
+          display: flex;
+          gap: 2rem;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          button{
+            background-color: var(--rojo-principal);
+            color: #fff;
+            align-self: end;
+            &:hover{
+              background-color: var(--rojo-secundario);
+            }
+          }
+        }
+      }
+    }
+  }
+  button{
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    background-color: var(--negro-principal);
+    color: #fffa;
+    &:hover{
+      background-color: #000b;
+    }
+  }
+</style>
+<body>
+  <div>
+    <form>
+      <input type="text" id="tarea" placeholder="Ingrese una tarea">
+      <button class="btn__anadir">Añadir</button>
+    </form>
+    <ul>
+    </ul>
+  </div>
+</body>
+</html>
