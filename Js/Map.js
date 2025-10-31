@@ -22,5 +22,5 @@ for (let [key, value] of personas) {
 console.log(personas.size);
 
 // Borrar todo
-personas.clear();
-console.log(personas.size); // 0
+// personas.clear();
+console.log(personas)
