@@ -1,13 +1,23 @@
-// Versión completa de reduce
-// nums.reduce((acc,item,index,arr)=>{})
+// Siempre tienen que retornar un valor distinto al original
 
-let nums=[0,1,2,3,4,5,6]
+// map
+const nums=[0,1,2,3,4,5,6]
+//nums.map((item, posicion)=>{})
+let doble=nums.map(num=>num*2)
+  
+// filter
+let menores4=nums.filter(num=>num<4)
+// nums.filter((item, posicion)=>{})
 
-// Versión corta de reduce
-let sumaTotal=nums.reduce((acc,item)=>{ // Siempre devuelve el acc
-  return acc+item // Por cada iteración se modificara al acc sumandole el elemento actual y retornando a acc
-},0) // Declaramos el valor inicial de acumulador (acc)
-console.log(sumaTotal)
+// reduce
+let sumar=nums.reduce((acc, num)=>{acc+num})
+// nums.reduce((acumulador, item, posicion)=>{},0)
+
+
+
+
+
+
 
 // Concatenando strs con reduce
 let strs=["I","Love","Tú"]
