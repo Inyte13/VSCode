@@ -51,6 +51,10 @@ num.padEnd(4,"0") // "0005", autocompleta con "0" por el final hasta que su leng
 // charAt
 str4.charAt(2) // "T", devuelve el c en el índice 2
 
+// includes, es sensible a UpperCase
+str4.includes("ejempl") // "true", ejempl es un substr de str4
+
+
 
 
 

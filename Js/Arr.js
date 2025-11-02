@@ -94,6 +94,5 @@ let torf2=nums.some((x)=>{return x%2===0}) // true
 // every, recibe una función callback retorna false si alguna es false
 let torf3=nums.every((x=>{return x%2===0})) // false
 
-// filter, recorre arr y devuelve uno nuevo que cumplan la condición
-let pares=numeros.filter(function(x){return x%2===0})
-//  pares=numeros.filter((x)=>{x%2===0})
+// filter, recorre arr y devuelve un booleano, los elementos que sean true's se añadirán al arr que retorne
+let pares=numeros.filter(x=>x%2===0)
