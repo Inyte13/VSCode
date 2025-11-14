@@ -1,23 +1,24 @@
-export function Busqueda(){
+import styles from "./Hero.module.css"
+export function Hero(){
   return(
 
-    <section className="hero">
+    <section className={styles.hero}>
 
       <header>
         <h1 className="hero__title">Encuentra tu próximo trabajo</h1>
         <p className="hero__text">Explora miles de oportunidades en el sector tecnológico.</p>  
       </header>
 
-      <form className="hero__search" role="search" aria-label="Buscar en el sitio">
+      <form role="search" aria-label="Buscar en el sitio">
         <input name="search" id="search" required type="search" placeholder="Buscar trabajos, empresas o habilidades" aria-label="Buscar"/>
-        <button type="submit" className="btn__search" aria-label="Enviar búsqueda">
+        <button type="submit" aria-label="Enviar búsqueda">
           <svg xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-  outline icon-tabler-search">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" />
           </svg>
         </button>
       </form> 
 
-      <nav className="filters">
+      <nav>
 
         <select name="technology" id="filter-technology">
           <option value="">Tecnología</option>

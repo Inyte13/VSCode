@@ -10,9 +10,9 @@
   --gris:#334155;
   --text-muted: #6c757d;
 }
-body{
-  background-color: var(--azul-principal);
-  color: #fff;
+  body{
+    background-color: var(--azul-principal);
+    color: #fff;
 
   .navbar{
     display: flex;
