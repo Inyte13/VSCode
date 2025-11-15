@@ -1,6 +1,6 @@
-import styles from "./ListaTrabajos.module.css"
+import styles from "./ListaEmpleos.module.css"
 import { EmpleoCard } from "./EmpleoCard"
-export function ListaTrabajos({data}){
+export function ListaEmpleos({data}){
   return (
     <>
       <h2>Resultados de búsqueda</h2>
