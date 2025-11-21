@@ -10,8 +10,15 @@
   --gris:#334155;
   --text-muted: #6c757d;
   --rojo-principal: #b40500;
+  --rojo-secundario: #9e1e1e;
+  --oferta-text:#dd4e4e;
+  --delivery-text: #3dd5ff;
 }
 body{
   background-color: var(--negro-principal);
   color: #fff;
+  main{
+    max-width: 1400px;
+    margin: 0 auto;
+  }
 }

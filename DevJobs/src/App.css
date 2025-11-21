@@ -9,6 +9,7 @@
   --celeste-clarito:#1170cf;
   --gris:#334155;
   --text-muted: #6c757d;
+  
 }
 body{
   background-color: var(--azul-principal);

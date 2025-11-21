@@ -3,12 +3,14 @@ export function Header(){
   return(
     <header className={styles.header}>
       <div className={styles.brand}>
-        <img src="/public/devjobs.png" alt="DevJobs logo" width="50"/>
-        <h1>DevJobs</h1>
+        <a href="/">
+          <img src="/public/devjobs.png" alt="DevJobs logo" width="50"/>
+        </a>
+        <h1><a href="/">DevJobs</a></h1>
       </div>
       <nav>
         <ul>
-          <li><a href="#empleos">Empleos</a></li>
+          <li><a href="/busqueda">Empleos</a></li>
           <li><a href="#empresas">Empresas</a></li>
           <li><a href="#salarios">Salarios</a></li>
         </ul>
