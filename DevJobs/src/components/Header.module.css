@@ -21,13 +21,11 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    h1{
-      a{
-        color: #fff;
-        text-decoration: none;
-      }
-      font-weight: bold;
+    a{
+      color: #fff;
+      text-decoration: none;
     }
+    font-weight: bold;
   }
   ul{
     list-style: none;

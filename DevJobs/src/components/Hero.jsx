@@ -1,4 +1,4 @@
-import { useId } from "react"
+import { useEffect, useId } from "react"
 import styles from "./Hero.module.css"
 export function Hero({fnTextField,fnTecnologia,fnUbicacion,fnExperiencia}){
 
@@ -22,7 +22,7 @@ export function Hero({fnTextField,fnTecnologia,fnUbicacion,fnExperiencia}){
   const manejarExperiencia=(e)=>{
     fnExperiencia(e.target.value)
   }
-
+  
   return(
     <section className={styles.hero}>
 

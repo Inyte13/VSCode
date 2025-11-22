@@ -1,16 +1,17 @@
+import { Link } from "./Link"
 import styles from "./Header.module.css"
 export function Header(){
   return(
     <header className={styles.header}>
       <div className={styles.brand}>
-        <a href="/">
+        <Link href="/">
           <img src="/public/devjobs.png" alt="DevJobs logo" width="50"/>
-        </a>
-        <h1><a href="/">DevJobs</a></h1>
+        </Link>
+        <h1><Link href="/">DevJobs</Link></h1>
       </div>
       <nav>
         <ul>
-          <li><a href="/busqueda">Empleos</a></li>
+          <li><Link href="/busqueda">Empleos</Link></li>
           <li><a href="#empresas">Empresas</a></li>
           <li><a href="#salarios">Salarios</a></li>
         </ul>
