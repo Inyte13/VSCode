@@ -1,11 +1,12 @@
 import styles from "./Header.module.css"
+import { Link } from "./Link.jsx"
 export function Header(){
   return(
     <header>
       <div className={styles.bar}>
-        <a href="../index.html">
+        <Link href="/">
           <img src="../public/logo_superpet.svg" alt="Logo de SuperPet" />
-        </a>
+        </Link>
         <form role="search">
           <input name="search" id="search" required type="search" placeholder="Busca tus marcas y productos favoritos"/>
           <button type="submit">
@@ -36,7 +37,7 @@ export function Header(){
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li><a href="#perro">Perros</a></li>
+          <li><Link href="/catalogo">Perros</Link></li>
           <li><a href="#gato">Gatos</a></li>
           <li><a href="#otras-mascotas">Otras mascotas</a></li>
           <li><a href="#marcas">Marcas</a></li>

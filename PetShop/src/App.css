@@ -13,6 +13,10 @@
   --rojo-secundario: #9e1e1e;
   --oferta-text:#dd4e4e;
   --delivery-text: #3dd5ff;
+  --white-15: color-mix(in srgb, #fff 15%, transparent);
+  --rojo-principal-40:color-mix(in srgb, var(--rojo-principal) 40%, transparent);
+  --rojo-principal-20:color-mix(in srgb, var(--rojo-principal) 20%, transparent);
+  --rojo-principal-70:color-mix(in srgb, var(--rojo-principal) 70%, transparent);
 }
 body{
   background-color: var(--negro-principal);
