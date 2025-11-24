@@ -1,35 +1,43 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import { Celda } from './components/Celda'
+export default function App() {
+  const TURNOS = {equis:"x",circulo: "o"}
+  const ESTADO_FINAL = {ganador: "Ganador", perdedor: "Perdedor", empate: "Empate", ninguno: "Ninguno"}
+  const [tablero, setTablero] = useState(Array(9).fill(null))
+  const [turno, setTurno] = useState(TURNOS.equis)
+  const [ganador, setGanador] = useState(ESTADO_FINAL.ninguno)
 
-function App() {
-  const [count, setCount] = useState(0)
-
+  const manejarClick = (index) => {
+    if (tablero[index]) return
+    const newTablero=[...tablero]
+    newTablero[index]=turno
+    setTablero(newTablero)
+    const nuevoTurno = turno === TURNOS.equis ? TURNOS.circulo : TURNOS.equis
+    setTurno(nuevoTurno)
+  }
+  
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <main className="tablero">
+      <h1>Tres en raya</h1>
+      <section className="game">
+        {
+          tablero.map((value,i)=>(
+            <Celda
+              key={i} 
+              index={i}
+              value={value}
+              updateEstado={manejarClick}
+            >
+              {i}
+            </Celda>
+          ))
+        }
+      </section>
+      <section className="turno">
+        <p>Turno de {turno}</p>
+
+      </section>
+    </main>
   )
 }
-
-export default App
