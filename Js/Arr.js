@@ -1,4 +1,3 @@
-// arr
 const numeros=[0,1,2,3,4]
 
 // Si buscamos un valor que no existe nos dará: 
@@ -6,9 +5,6 @@ numeros[5] // (undefined)
 
 // Reemplaza el value
 numeros[1]=7 // [0,7,2,3,4]
-
-// Podemos crear arr con diferentes tipos de variables
-const arregloMixto=["Holi", 19, true, null, {fotolove: "Sara"}]
 
 // Recorriendo con forEach
 let names=["Aitana", "Sara", "Valverdina", "Paula"]
