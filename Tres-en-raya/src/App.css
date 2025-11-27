@@ -15,76 +15,76 @@
   -webkit-text-size-adjust: 100%;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-.tablero {
+body {
+  display: flex;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+main {
   width: fit-content;
   margin: 40px auto;
   text-align: center;
+  
+  h1 {
+    color: #eee;
+    margin-bottom: 16px;
+  }
+
+  button {
+    padding: 8px 12px;
+    margin: 25px;
+    background: transparent;
+    border: 2px solid #eee;
+    color: #eee;
+    width: 100px;
+    border-radius: 5px;
+    transition: 0.2s;
+    font-weight: bold;
+    cursor: pointer;
+    
+    &:hover {
+      background: #eee;
+      color: #222;
+    }
+  }
+
+  .game {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+  }
+
+  .turno {
+    display: flex;
+    justify-content: center;
+    margin: 15px auto;
+    width: fit-content;
+    position: relative;
+    border-radius: 10px;
+  }
+  
+  .ganador .celda {
+    width: 70px;
+    height: 70px;
+    pointer-events: none;
+    border-color: transparent;
+  }
 }
 
-.tablero h1 {
-  color: #eee;
-  margin-bottom: 16px;
-}
 
-.tablero button {
-  padding: 8px 12px;
-  margin: 25px;
-  background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
-  width: 100px;
-  border-radius: 5px;
-  transition: 0.2s;
-  font-weight: bold;
-  cursor: pointer;
-}
 
-.tablero button:hover {
-  background: #eee;
-  color: #222;
-}
 
-.tablero .game {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
 
-.turno {
-  display: flex;
-  justify-content: center;
-  margin: 15px auto;
-  width: fit-content;
-  position: relative;
-  border-radius: 10px;
-}
 
-.turno .celda,
-.ganador .celda {
-  width: 70px;
-  height: 70px;
-  pointer-events: none;
-  border-color: transparent;
-}
-
-.celda.is-selected {
-  color: #fff;
-  background: #09f;
-}
 
 .ganador {
   position: absolute;
@@ -116,15 +116,4 @@ body {
   border-radius: 10px;
   display: flex;
   gap: 15px;
-}
-
-.celda {
-  width: 100px;
-  height: 100px;
-  border: 2px solid #eee;
-  border-radius: 5px;
-  display: grid;
-  place-items: center;
-  cursor: pointer;
-  font-size: 48px;
 }
