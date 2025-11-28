@@ -1,12 +1,13 @@
-import styles from "./Celda.module.css"
-export function Celda({children, index, value, updateEstado}){
+import styles from './Celda.module.css'
+export function Celda ({ children, index, updateEstado }) {
   const manejarClick = () => {
     updateEstado(index)
   }
   return (
-    <div 
+    <div
       className={styles.celda}
-      onClick={manejarClick}>
+      onClick={manejarClick}
+    >
       <span>{children}</span>
     </div>
   )

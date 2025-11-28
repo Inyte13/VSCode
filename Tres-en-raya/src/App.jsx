@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import { Celda } from './components/Celda'
 import { TURNOS, COMBOS_GANADORES } from './enum'
-import confetti from "canvas-confetti"
+import confetti from 'canvas-confetti'
 import { MenuGanador } from './components/MenuGanador'
 import './App.css'
 
 // useEffect es: ejecutar codigo cuando el se monta el componente y también cuando cambia las dependencias
 
-export default function App() {
+export default function App () {
   const [tablero, setTablero] = useState(() => {
-    const tableroEnStorage = localStorage.getItem("tablero") // Solo hacerlo una vez, por que es muy lento
+    const tableroEnStorage = window.localStorage.getItem('tablero') // Solo hacerlo una vez, por que es muy lento
     return tableroEnStorage ? JSON.parse(tableroEnStorage) : Array(9).fill(null)
   })
   const [turno, setTurno] = useState(() => {
-    const turnoEnStorage = localStorage.getItem("turno")
+    const turnoEnStorage = window.localStorage.getItem('turno')
     return turnoEnStorage ?? TURNOS.equis
   })
   const [ganador, setGanador] = useState(null)
@@ -24,7 +24,7 @@ export default function App() {
       if (
         newTablero[a] &&
         newTablero[a] === newTablero[b] &&
-        newTablero[a] === newTablero[c] 
+        newTablero[a] === newTablero[c]
       ) {
         return newTablero[a]
       }
@@ -34,14 +34,14 @@ export default function App() {
 
   const manejarClick = (index) => {
     if (tablero[index] || ganador) return
-    const newTablero=[...tablero]
-    newTablero[index]=turno
+    const newTablero = [...tablero]
+    newTablero[index] = turno
     setTablero(newTablero)
     const nuevoTurno = turno === TURNOS.equis ? TURNOS.circulo : TURNOS.equis
     setTurno(nuevoTurno)
 
-    localStorage.setItem("tablero", JSON.stringify(newTablero))
-    localStorage.setItem("turno", nuevoTurno)
+    window.localStorage.setItem('tablero', JSON.stringify(newTablero))
+    window.localStorage.setItem('turno', nuevoTurno)
 
     const newGanador = verificarGanador(newTablero)
     if (newGanador !== null) {
@@ -52,25 +52,22 @@ export default function App() {
     }
   }
 
-  useEffect
-
   const resetGame = () => {
     setTablero(Array(9).fill(null))
     setTurno(TURNOS.equis)
     setGanador(null)
-    localStorage.removeItem("tablero")
-    localStorage.removeItem("turno")
+    window.localStorage.removeItem('tablero')
+    window.localStorage.removeItem('turno')
   }
-  
   return (
     <main>
       <h1>Tres en raya</h1>
       <button onClick={resetGame}>Resetar el juego</button>
-      <section className="game">
+      <section className='game'>
         {
-          tablero.map((value,i)=>(
+          tablero.map((value, i) => (
             <Celda
-              key={i} 
+              key={i}
               index={i}
               value={value}
               updateEstado={manejarClick}
@@ -80,10 +77,10 @@ export default function App() {
           ))
         }
       </section>
-      <section className="turno">
+      <section className='turno'>
         <p>Turno de {turno}</p>
       </section>
-      <MenuGanador ganador={ganador} resetGame={resetGame}/>
+      <MenuGanador ganador={ganador} resetGame={resetGame} />
     </main>
   )
 }
