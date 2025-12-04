@@ -1,0 +1,64 @@
+.card{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  justify-content: space-between;
+  header{
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    div{
+      display: flex;
+      flex-direction: column;
+    }
+    span{
+      opacity: .6;
+    }
+  }
+  img{
+    width: 48px;
+    height: 48px;
+    border-radius: 1000px;
+  }
+  .btnSiguiendo{
+    margin-left: 16px;
+    background-color: transparent;
+    border-radius: 1000px;
+    padding: 6px 16px;
+    font-weight: bold;
+    border: 1px solid #536471;
+    color: #fff;
+    width: 130.312px;
+    .unfollow{
+      display: none;
+    }
+    &:hover{
+      color: #f00;
+      border: 1px solid #67070f;
+      background: #190305;
+      opacity: .8;
+      .follow{
+        display: none;
+      }
+      .unfollow{
+        display: block;
+      }
+
+    }
+  }
+  .btnSeguir{
+    margin-left: 16px;
+    border: 0;
+    border-radius: 1000px;
+    padding: 6px 16px;
+    font-weight: bold;
+    &:hover{
+      background-color: #ddd;
+      transition: .3s ease background-color;
+      opacity: .8;
+    }
+    .unfollow{
+      display: none;
+    }
+  }
+}

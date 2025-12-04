@@ -1,4 +1,3 @@
-// arr
 const numeros=[0,1,2,3,4]
 
 // Si buscamos un valor que no existe nos dará: 
@@ -7,36 +6,34 @@ numeros[5] // (undefined)
 // Reemplaza el value
 numeros[1]=7 // [0,7,2,3,4]
 
-// Podemos crear arr con diferentes tipos de variables
-const arregloMixto=["Holi", 19, true, null, {fotolove: "Sara"}]
-
 // Recorriendo con forEach
-let names=["Aitana", "Sara", "Valverdina", "Paola"]
+let names=["Aitana", "Sara", "Valverdina", "Paula"]
 names.forEach(name=>{console.log(name)})
 
 // push, lo mandará al final
-names.push("Rorro") // ["Aitana", "Sara", "Valverdina", "Paola", "Rorro"]
+names.push("Rorro") // ["Aitana", "Sara", "Valverdina", "Paula", "Rorro"]
 
 // unshift, lo mandará al inicio
-names.unshift("Adèle") // ["Adèle", "Aitana", "Sara", "Valverdina", "Paola", "Rorro"]
+names.unshift("Adèle") // ["Adèle", "Aitana", "Sara", "Valverdina", "Paula", "Rorro"]
 
 // splice, (índice, elementos ha eliminar, value) y (índice, elemntos ha eliminar) y podemos usar estos elementos
-names.splice(1,3,"Luis") // ["Adèle", "Luis", "Paola", "Rorro"]
+names.splice(1,3,"Luis") // ["Adèle", "Luis", "Paula", "Rorro"]
 
 // slice, eliminar lo que no está seleccionado [índice, final>
-names=names.slice(0,3) // ["Adèle", "Luis", "Paola"]
+names=names.slice(0,3) // ["Adèle", "Luis", "Paula"]
 
 // concat, agrega elementos al arr
-names=names.concat("Darcy") // ["Adèle", "Luis", "Paola", "Darcy"]
+names=names.concat("Darcy") // ["Adèle", "Luis", "Paula", "Darcy"]
 
 // pop, elimina el último elemento y podemos usar ese elemento
-names.pop() // ["Adèle", "Luis", "Paola"]
+names.pop() // ["Adèle", "Luis", "Paula"]
 
 // shift, elimina el primer elemetno y podemos usar ese elemento
-names.shift() // ["Luis", "Paola"]
+names.shift() // ["Luis", "Paula"]
 
-// fill, reemplaza elementos varias veces si se quiere [índice, final>
-names.fill("Oriana", 1,2) // ['Luis', 'Oriana']
+// fill
+names.fill("Oriana", 1,2) // ['Luis', 'Oriana'], reemplaza el elemento [1, 2> ("Paula") por "Oriana"
+Array(9).fill("<3") // Creando un arr de "<3" de tamaño 9
 
 // reverse, invierte el arr
 names.reverse() // ['Oriana', 'Luis']
@@ -92,7 +89,7 @@ let i4=personas2.findIndex((persona)=>{return persona.name==="Lydia"}) // 3
 let torf2=nums.some((x)=>{return x%2===0}) // true
 
 // every, recibe una función callback retorna false si alguna es false
-let torf3=nums.every((x=>{return x%2===0})) // false
+const torf3 = nums.every( x => x % 2 === 0) // false
 
 // filter, recorre arr y devuelve un booleano, los elementos que sean true's se añadirán al arr que retorne
 let pares=numeros.filter(x=>x%2===0)
