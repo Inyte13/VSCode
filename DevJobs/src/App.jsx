@@ -6,12 +6,12 @@ import { useRouter } from "./hooks/useRouter.jsx"
 
 export default function App() {
   // Custom hook para
-  const {pathActual}=useRouter()
+  const { pathActual } = useRouter()
   
-  let paginaActual=null
-  if(pathActual==="/"){
+  let paginaActual = null
+  if (pathActual === "/") {
     paginaActual=<Home/>
-  }else if(pathActual==="/busqueda"){
+  } else if (pathActual==="/busqueda") {
     paginaActual=<Busqueda/>
   }
   return (

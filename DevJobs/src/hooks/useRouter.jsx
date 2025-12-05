@@ -1,19 +1,29 @@
 import { useEffect, useState } from "react"
 
-export function useRouter(){
-  const [pathActual, setPath]=useState(location.pathname)
-  useEffect(()=>{
-    const manejarCambio=()=>{
-      setPath(location.pathname)
+// Para un hook personalizado, es necesario el prefijo "use"
+export function useRouter() {
+
+  // Definimos el estado inicial con la ruta actual
+  const [ pathActual, setPath ] = useState(window.location.pathname) 
+  
+  useEffect(() => {
+    const manejarCambioUbicacion = () => {
+      setPath(window.location.pathname)
     }
-    addEventListener("popstate", manejarCambio)
-    return()=>{
-      removeEventListener("popstate", manejarCambio)
+    // El popstate se dispara cuando el usuario navega a través del historial (atrás o adelante)
+    window.addEventListener('popstate', manejarCambioUbicacion) 
+    // Fx cleanup: IMPORTANT!
+    return () => {
+      window.removeEventListener('popstate', manejarCambioUbicacion)
     }
   }, [])
-  function navegarA(path){
-    history.pushState({},"",path)
-    dispatchEvent(new PopStateEvent("popstate"))
+
+  function navegarA(path) {
+    // 1. pushState cambia la URL en la barra de direcciones pero es silencioso (no dispara eventos)
+    history.pushState({}, '', path)
+
+    // 2. Lanzo manualmente el evento popstate para que el useEffect de arriba se entere y actualice el estado
+    window.dispatchEvent(new PopStateEvent('popstate'))
   }
   return {
     pathActual,

@@ -1,13 +1,32 @@
+import { useRouter } from "../hooks/useRouter"
 import styles from "./Home.module.css"
+
 export function Home() {
+  
+  const { navegarA } = useRouter()
+
+  const manejarBusqueda = (e) => {
+    // Evitamos que recargue la pág el form
+    e.preventDefault()
+    // Recuperamos los campos del form (nativo)
+    const formData = new FormData(e.target)
+    // Recuperamos el término del input con name 'search'
+    const terminoDeBusqueda = formData.get('search')
+    
+    const url = terminoDeBusqueda 
+      ? `/search?text=${encodeURIComponent(terminoDeBusqueda)}` // Para que codifique los espacios (%20) 
+      : '/busqueda' 
+    navegarA(url)
+  }
+  
   return (
     <main>
       <section className={styles.hero}>
         <img src="..\public\persona-trabajando.jpg" alt="persona-trabajando"/>
         <h1>Encuentra el trabajo de tus sueños</h1>
         <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad.</p>
-        <form action="/buscar" method="GET" role="search" aria-label="Buscar en el sitio">
-          <input id="q" name="q" type="search" placeholder="Buscar empleos por título, habilidad o empresa" aria-label="Buscar" autoComplete="off"/>
+        <form onSubmit={manejarBusqueda} action="/buscar" method="GET" role="search" aria-label="Buscar en el sitio">
+          <input name="search" id="q" type="search" placeholder="Buscar empleos por título, habilidad o empresa" aria-label="Buscar" autoComplete="off"/>
           <button type="submit" aria-label="Enviar búsqueda">
             <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-  outline icon-tabler-search">
               <path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" /><path d="M21 21l-6 -6" />
