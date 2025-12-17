@@ -1,17 +1,17 @@
-import { useRouter } from "../hooks/useRouter"
+import { useRouter } from '../hooks/useRouter'
 
-export function Link ({ href, children, ...props }){
+export function Link ({ href, children, ...props }) {
   const { navegarA } = useRouter()
-  const manejarClick = ((e) => {
+  const manejarClick = (e) => {
     e.preventDefault()
     navegarA(href)
-  })
-  
-  return(
-    <a 
+  }
+  return (
+    <a
       href={href}
       {...props}
-      onClick={manejarClick}>
+      onClick={manejarClick}
+    >
       {children}
     </a>
   )
