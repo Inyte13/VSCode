@@ -1,4 +1,4 @@
-import { useEffect, useId } from "react"
+import { useId } from "react"
 import styles from "./Hero.module.css"
 export function Hero({fnTextField,fnTecnologia,fnUbicacion,fnExperiencia}){
 
