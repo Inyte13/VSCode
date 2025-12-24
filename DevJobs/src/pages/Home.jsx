@@ -3,7 +3,6 @@ import styles from './Home.module.css'
 
 export function Home () {
   const { navegarA } = useRouter()
-
   const manejarBusqueda = (e) => {
     // Evitamos que recargue la pág el form
     e.preventDefault()
@@ -24,7 +23,7 @@ export function Home () {
         <img src='..\public\persona-trabajando.jpg' alt='persona-trabajando' />
         <h1>Encuentra el trabajo de tus sueños</h1>
         <p>Únete a la comunidad más grande de desarrolladores y encuentra tu próxima oportunidad.</p>
-        <form onSubmit={manejarBusqueda} action='/buscar' method='GET' role='search' aria-label='Buscar en el sitio'>
+        <form onSubmit={manejarBusqueda} role='search' aria-label='Buscar en el sitio'>
           <input name='search' id='q' type='search' placeholder='Buscar empleos por título, habilidad o empresa' aria-label='Buscar' autoComplete='off' />
           <button type='submit' aria-label='Enviar búsqueda'>
             <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='icon icon-tabler icons-tabler-  outline icon-tabler-search'>
