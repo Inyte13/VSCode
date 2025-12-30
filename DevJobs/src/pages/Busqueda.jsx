@@ -27,7 +27,7 @@ export function Busqueda () {
         {
           loading ? <p style={{ margin: 'auto', textAlign: 'center' }}>Cargando...</p> : <ListaEmpleos data={empleos} />
         }
-        <Pagination nroPaginas={NUMERO_DE_PAGINAS} paginaActual={pagina} fn={cambiarPag} />
+        <Pagination nroPaginas={NUMERO_DE_PAGINAS} paginaActual={pagina} cambiarPag={cambiarPag} />
       </section>
     </main>
   )
