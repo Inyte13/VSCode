@@ -9,7 +9,7 @@ export function Pagination ({ paginaActual = 1, nroPaginas = 5, cambiarPag }) {
   }
   const manejarNextClick = (e) => {
     e.preventDefault()
-    cambiarPag(paginaActual - 1)
+    cambiarPag(paginaActual + 1)
   }
   const urlPag = (paginaActual) => {
     const url = new URL(window.location)
@@ -29,7 +29,7 @@ export function Pagination ({ paginaActual = 1, nroPaginas = 5, cambiarPag }) {
       {paginas.map(pagina => (
         <a
           key={pagina}
-          href={urlPag(paginaActual)}
+          href={urlPag(pagina)}
           className={`pagination__number ${paginaActual === pagina ? styles.estasAqui : ''}`}
           onClick={(e) => {
             e.preventDefault()

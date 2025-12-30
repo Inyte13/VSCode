@@ -1,7 +1,7 @@
 import { useId } from 'react'
 import styles from './Hero.module.css'
 
-export function Hero ({ fnTextField, fnTecnologia, fnUbicacion, fnExperiencia }) {
+export function Hero ({ fnTextField, fnTecnologia, fnUbicacion, fnExperiencia, initialText }) {
   // Generar IDs únicos para accesibilidad
   const idSearch = useId()
   const idTecnologia = useId()
@@ -34,6 +34,7 @@ export function Hero ({ fnTextField, fnTecnologia, fnUbicacion, fnExperiencia })
           name={idSearch} id='search' required type='text'
           placeholder='Buscar trabajos, empresas o habilidades' aria-label='Buscar'
           onChange={manejarInputText}
+          defaultValue={initialText}
         />
         <button type='submit' aria-label='Enviar búsqueda'>
           <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='currentColor' strokeWidth='2' strokeLinecap='round' strokeLinejoin='round' className='icon icon-tabler icons-tabler-  outline icon-tabler-search'>

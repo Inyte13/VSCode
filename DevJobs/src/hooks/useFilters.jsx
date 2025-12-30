@@ -1,14 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
+import { useRouter } from './useRouter'
 
 export function useFilters () {
   // Usamos useRef para la persistencia, donde la variable inicializada estará en 'current'
   const timeoutId = useRef(null)
-  const [pagina, setPagina] = useState(1)
+  const [pagina, setPagina] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    const urlPag = params.get('pagina')
+    return urlPag ? Number(urlPag) : 1
+  })
   const cambiarPag = (page) => {
     setPagina(page)
   }
 
-  const [inputText, setInputText] = useState('')
+  const [inputText, setInputText] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('text') || ''
+  })
   const manejarInputText = (e) => {
     if (timeoutId.current) {
       clearTimeout(timeoutId.current)
@@ -19,18 +27,27 @@ export function useFilters () {
     setPagina(1)
   }
 
-  const [filtroTecnologia, setFiltroTecnologia] = useState('')
+  const [filtroTecnologia, setFiltroTecnologia] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('technology') || ''
+  })
   const manejarTecnologia = (e) => {
     setFiltroTecnologia(e)
     setPagina(1)
   }
 
-  const [filtroUbicacion, setFiltroUbicacion] = useState('')
+  const [filtroUbicacion, setFiltroUbicacion] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('type') || ''
+  })
   const manejarUbicacion = (e) => {
     setFiltroUbicacion(e)
     setPagina(1)
   }
-  const [filtroExperiencia, setFiltroExperiencia] = useState('')
+  const [filtroExperiencia, setFiltroExperiencia] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('level') || ''
+  })
   const manejarExperiencia = (e) => {
     setFiltroExperiencia(e)
     setPagina(1)
@@ -80,12 +97,28 @@ export function useFilters () {
     fetchEmpleos()
   }, [inputText, filtroTecnologia, filtroUbicacion, filtroExperiencia, pagina])
 
+  const { navegarA } = useRouter()
+
+  // useEffect
+  useEffect(() => {
+    const params = new URLSearchParams()
+    if (inputText) params.append('text', inputText)
+    if (filtroTecnologia) params.append('technology', filtroTecnologia)
+    if (filtroUbicacion) params.append('type', filtroUbicacion)
+    if (filtroExperiencia) params.append('level', filtroExperiencia)
+
+    if (pagina > 1) params.append('pagina', pagina)
+    const newUrl = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname
+    navegarA(newUrl)
+  }, [inputText, filtroTecnologia, filtroUbicacion, filtroExperiencia, pagina, navegarA])
+
   // Para calcular el número de páginas, usando el total
   const NUMERO_DE_PAGINAS = Math.ceil(total / EMPLEOS_POR_PAGINA)
 
   return {
     empleos,
     loading,
+    inputText,
     manejarInputText,
     manejarTecnologia,
     manejarUbicacion,

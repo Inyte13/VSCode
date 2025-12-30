@@ -6,6 +6,7 @@ export function Busqueda () {
   const {
     empleos,
     loading,
+    inputText,
     manejarInputText,
     manejarTecnologia,
     manejarUbicacion,
@@ -17,6 +18,7 @@ export function Busqueda () {
   return (
     <main>
       <Hero
+        initialText={inputText}
         fnTextField={manejarInputText}
         fnTecnologia={manejarTecnologia}
         fnUbicacion={manejarUbicacion}
