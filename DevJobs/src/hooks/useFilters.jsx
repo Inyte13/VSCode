@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 
 export function useFilters () {
   // Usamos useRef para la persistencia, donde la variable inicializada estará en 'current'
-  const [timeoutId] = useRef(null)
+  const timeoutId = useRef(null)
   const [pagina, setPagina] = useState(1)
   const cambiarPag = (page) => {
     setPagina(page)
