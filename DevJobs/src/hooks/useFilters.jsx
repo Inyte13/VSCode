@@ -106,11 +106,13 @@ export function useFilters () {
     if (filtroTecnologia) params.append('technology', filtroTecnologia)
     if (filtroUbicacion) params.append('type', filtroUbicacion)
     if (filtroExperiencia) params.append('level', filtroExperiencia)
-
     if (pagina > 1) params.append('pagina', pagina)
-    const newUrl = params.toString() ? `${window.location.pathname}?${params.toString()}` : window.location.pathname
+
+    const newUrl = params.toString()
+      ? `${window.location.pathname}?${params.toString()}`
+      : window.location.pathname
     navegarA(newUrl)
-  }, [inputText, filtroTecnologia, filtroUbicacion, filtroExperiencia, pagina, navegarA])
+  }, [inputText, filtroTecnologia, filtroUbicacion, filtroExperiencia, pagina])
 
   // Para calcular el número de páginas, usando el total
   const NUMERO_DE_PAGINAS = Math.ceil(total / EMPLEOS_POR_PAGINA)
