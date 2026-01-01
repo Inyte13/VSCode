@@ -23,11 +23,10 @@ export function Job () {
   // El 'id' tiene que ser el mismo que aparece en jobs/id
   const { id } = useParams()
   const [job, setJob] = useState(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 
   useEffect(() => {
-    setLoading(true)
     fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
       .then(response => {
         // Verificar si la response dio okey
@@ -65,6 +64,7 @@ export function Job () {
             Empleo no encontrado
           </h2>
           <button
+            className={styles.errorBtn}
             onClick={() => navegarA('/')}
           >
             Volver al inicio
@@ -76,7 +76,7 @@ export function Job () {
   return (
     <main className={styles.mainJob}>
       <nav className={styles.breadcrumb}>
-        <Link href='/search'>Empleos</Link>
+        <Link href='/busqueda'>Empleos</Link>
         <span className={styles.breadcrumbSeparacion}>/</span>
         <span className={styles.breadcrumbActual}>{job.titulo}</span>
       </nav>
