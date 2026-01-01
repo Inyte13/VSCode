@@ -63,3 +63,31 @@
     } 
   }
 }
+
+.loading,
+.error {
+  padding-block: 5rem;
+  text-align: center;
+}
+
+.loadingText {
+  color: var(--text-muted);
+}
+
+.errorTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+.errorBtn {
+  border: none;
+  padding: 0.7rem 1.2rem;
+  color: #fff;
+  background-color: var(--celeste-clarito);
+  font-weight: 500;
+  border-radius: 10px;
+  &:hover{
+    background-color: color-mix(in srgb, var(--celeste-clarito) 70%,transparent);
+  }
+}
