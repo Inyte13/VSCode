@@ -3,6 +3,7 @@
   box-sizing: border-box;
   padding: 0;
 }
+
 :root{
   --azul-principal:#101922;
   --azul-clarito:#1e293b;
@@ -11,10 +12,12 @@
   --text-muted: #6c757d;
   
 }
+
 body{
   background-color: var(--azul-principal);
   color: #fff;
 }
+
 .empleoContainer{
   max-width: 1000px;
   padding: 0.5rem;
