@@ -1,81 +1,65 @@
-.card {
-  background: none;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 1px solid rgba(255, 255, 225, .3);
-  margin: 0;
-  display: flex;
-  align-items: start;
-  gap: 1rem;
-
-  &:last-child {
-    border-bottom: none;
+.mainJob {
+  max-width: 1000px;
+  margin: auto;
+  padding: 3rem 2rem;
+  .breadcrumb {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: start;
+    padding-bottom: 2rem;
+    a, .breadcrumbSeparacion {
+      text-decoration: none;
+      color: #fff8;
+    }
+    .breadcrumbActual {
+      color: #fffe;
+    }
   }
-
-  .isHidden {
-    display: none;
-  }
-}
-
-.content {
-  flex: 1;
-}
-
-.actions {
-  display: flex;
-  gap: .75rem;
-  align-items: center;
-}
-
-.title {
-  font-size: 1.125rem;
-  font-weight: 600;
-  margin: 0 0 .25rem 0;
-  color: #fff
-}
-
-.meta {
-  font-size: .875rem;
-  opacity: .75;
-  color: #cde;
-}
-
-.description {
-  margin-top: .5rem ;
-  color: #cde;
-  line-height: 1.6;
-}
-
-.btnApply {
-  background: #09f;
-  color: #fff;
-  border: none;
-  padding: 1rem 1.5rem;
-  border-radius: .375rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all .2s;
-  white-space: nowrap;
-
-  &:hover {
-    background: #08e;
-    transform: translateY(-1px);
-  }
-
-  &:active {
-    transform: translateY(0);
-  }
-
-  &.isApplied {
-    background: #4a5;
-    pointer-events: none;
-  }
-}
-
-.enterLink {
-  text-decoration: none;
-  color: inherit;
-  &:hover {
-    text-decoration: underline;
+  article {
+    padding: 2rem;
+    background-color: #111825;
+    border-radius: 10px;
+    header {
+      padding-bottom: 2rem;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .column1 > h1 {
+        padding-bottom: 0.3rem;
+        font-size: 2.5rem;
+      }
+      .column1 > p {
+        color: #fff8;
+        font-size: 1.2rem;
+      }
+      button {
+      border: none;
+      padding: 0.7rem 1.2rem;
+      color: #fff;
+      background-color: var(--celeste-clarito);
+      font-weight: 500;
+      border-radius: 10px;
+        &:hover {
+          background-color: color-mix(in srgb, var(--celeste-clarito) 70%,transparent);
+        }
+        &.clickeado {
+        background-color: #4a5;
+        pointer-events: none;
+        opacity: 0.6;
+        } 
+      }
+    }
+    section {
+      padding-bottom: 2rem;
+      h2 {
+        padding-bottom: 1.5rem;
+        font-size: 1.6rem;
+      }
+      div {
+        line-height: 1.6rem;
+        color: rgba(255, 255, 255, 0.7);
+      }
+    } 
   }
 }

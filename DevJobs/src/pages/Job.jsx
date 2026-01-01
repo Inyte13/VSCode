@@ -8,13 +8,13 @@ import styles from './Job.module.css'
 function JobSection ({ titulo, contenido }) {
   const html = snarkdown(contenido)
   return (
-    <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>
+    <section>
+      <h2>
         {titulo}
       </h2>
-      <div className={`${styles.sectionContent} prose`}>
-        {html}
-      </div>
+      <div
+        dangerouslySetInnerHTML={{ __html: html }} // Para renderizar html si o si
+      />
     </section>
   )
 }
@@ -27,6 +27,7 @@ export function Job () {
   const [error, setError] = useState(null)
 
   useEffect(() => {
+    setLoading(true)
     fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
       .then(response => {
         // Verificar si la response dio okey
@@ -58,7 +59,7 @@ export function Job () {
 
   if (error || !job) {
     return (
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
+      <main style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
         <div className={styles.error}>
           <h2 className={styles.errorTitle}>
             Empleo no encontrado
@@ -69,51 +70,47 @@ export function Job () {
             Volver al inicio
           </button>
         </div>
-      </div>
+      </main>
     )
   }
   return (
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1rem' }}>
-      <div className={styles.container}>
-        <nav className={styles.breadcrumb}>
-          <Link
-            href='/search'
-            className={styles.breadcrumbButton}
-          >
-            Empleos
-          </Link>
-          <span className={styles.breadcrumbSeparator}>/</span>
-          <span className={styles.breadcrumbCurrent}>{job.titulo}</span>
-        </nav>
-      </div>
-      <header className={styles.header}>
-        <h1 className={styles.title}>
-          {job.titulo}
-        </h1>
-        <p className={styles.meta}>
-          {job.empresa} · {job.ubicacion}
-        </p>
-      </header>
-      <button className={styles.applyButton}>
-        Aplicar ahora
-      </button>
-
-      <JobSection
-        titulo='Descripción del puesto'
-        contenido={job.content.description}
-      />
-      <JobSection
-        titulo='Responsabilidades'
-        contenido={job.content.responsibilities}
-      />
-      <JobSection
-        titulo='Requisitos'
-        contenido={job.content.requirements}
-      />
-      <JobSection
-        titulo='Acerca de la empresa'
-        contenido={job.content.about}
-      />
-    </div>
+    <main className={styles.mainJob}>
+      <nav className={styles.breadcrumb}>
+        <Link href='/search'>Empleos</Link>
+        <span className={styles.breadcrumbSeparacion}>/</span>
+        <span className={styles.breadcrumbActual}>{job.titulo}</span>
+      </nav>
+      <article>
+        <header>
+          <div className={styles.column1}>
+            <h1 className={styles.title}>
+              {job.titulo}
+            </h1>
+            <p className={styles.meta}>
+              {job.empresa} · {job.ubicacion}
+            </p>
+          </div>
+          <div className={styles.column2}>
+            <button>Aplicar ahora</button>
+          </div>
+        </header>
+        <JobSection
+          titulo='Descripción del puesto'
+          contenido={job.content.description}
+        />
+        <JobSection
+          titulo='Responsabilidades'
+          contenido={job.content.responsibilities}
+        />
+        <JobSection
+          titulo='Requisitos'
+          contenido={job.content.requirements}
+        />
+        <JobSection
+          titulo='Acerca de la empresa'
+          contenido={job.content.about}
+        />
+      </article>
+    </main>
   )
 }
