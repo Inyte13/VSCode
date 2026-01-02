@@ -1,7 +1,7 @@
 import { useRouter } from '../hooks/useRouter'
 import styles from './Home.module.css'
 
-export function Home () {
+export default function Home () {
   const { navegarA } = useRouter()
   const manejarBusqueda = (e) => {
     // Evitamos que recargue la pág el form

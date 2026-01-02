@@ -19,7 +19,7 @@ function JobSection ({ titulo, contenido }) {
   )
 }
 
-export function Job () {
+export default function Job ({ isLogueado }) {
   // El 'id' tiene que ser el mismo que aparece en jobs/id
   const { id } = useParams()
   const [job, setJob] = useState(null)
@@ -91,7 +91,9 @@ export function Job () {
             </p>
           </div>
           <div className={styles.column2}>
-            <button>Aplicar ahora</button>
+            <button disabled={!isLogueado}>
+              {isLogueado ? 'Aplicar ahora' : 'Inicia sesión para aplicar'}
+            </button>
           </div>
         </header>
         <JobSection

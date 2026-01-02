@@ -2,7 +2,7 @@ import { Pagination } from '../components/Pagination.jsx'
 import { Hero } from '../components/Hero.jsx'
 import { ListaEmpleos } from '../components/ListaEmpleos.jsx'
 import { useFilters } from '../hooks/useFilters.jsx'
-export function Busqueda () {
+export default function Busqueda () {
   const {
     empleos,
     loading,
