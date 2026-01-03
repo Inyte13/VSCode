@@ -1,7 +1,10 @@
 import { Link } from './Link'
 import styles from './Header.module.css'
 import { NavLink } from 'react-router'
-export function Header ({ isLogueado, onLogin, onLogout }) {
+import { useAuthStore } from '../store/authStore'
+export function Header () {
+  // Importamos desde el context
+  const { isLogueado, login, logout } = useAuthStore()
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
@@ -30,8 +33,8 @@ export function Header ({ isLogueado, onLogin, onLogout }) {
         </div>
         {
           isLogueado
-            ? <button onClick={onLogout}>Cerrar sesión</button>
-            : <button onClick={onLogin}>Iniciar sesión</button>
+            ? <button onClick={logout}>Cerrar sesión</button>
+            : <button onClick={login}>Iniciar sesión</button>
         }
       </div>
     </header>

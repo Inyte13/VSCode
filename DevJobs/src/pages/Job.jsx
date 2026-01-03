@@ -4,6 +4,7 @@ import { useRouter } from '../hooks/useRouter'
 import { Link } from '../components/Link'
 import snarkdown from 'snarkdown'
 import styles from './Job.module.css'
+import { useAuthStore } from '../store/authStore'
 
 function JobSection ({ titulo, contenido }) {
   const html = snarkdown(contenido)
@@ -19,7 +20,7 @@ function JobSection ({ titulo, contenido }) {
   )
 }
 
-export default function Job ({ isLogueado }) {
+export default function Job () {
   // El 'id' tiene que ser el mismo que aparece en jobs/id
   const { id } = useParams()
   const [job, setJob] = useState(null)
@@ -73,6 +74,7 @@ export default function Job ({ isLogueado }) {
       </main>
     )
   }
+  const { isLogueado } = useAuthStore()
   return (
     <main className={styles.mainJob}>
       <nav className={styles.breadcrumb}>
