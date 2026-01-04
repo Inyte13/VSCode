@@ -5,24 +5,27 @@ export const useFavoritosStore = create((set, get) => ({
   favoritos: [],
 
   // Acciones
-  addFavorito: (id) => {
+  anadirFavorito: (id) => {
     set((state) => ({
       favoritos: state.favoritos.includes(id)
         ? state.favoritos
         : [...state.favoritos, id]
     }))
   },
-  removeFavorito: (id) => {
+
+  eliminarFavorito: (id) => {
     set((state) => ({
+      // Filtramos los que tengan diferente id, eliminando asi los que si tengan
       favoritos: state.favoritos.filter((idInput) => idInput !== id)
     }))
   },
-  isFavorito: (id) => {
-    return get().favoritos.includes(id)
+
+  isFavorito: (id) => get().favoritos.includes(id),
+
+  alternarFavorito: (id) => {
+    const { anadirFavorito, eliminarFavorito, isFavorito } = get()
+    isFavorito(id) ? eliminarFavorito(id) : anadirFavorito(id)
   },
-  toggleFavorito: (id) => {
-    const { addFavorito, removeFavorito, isFavorito } = get()
-    isFavorito ? removeFavorito(id) : addFavorito(id)
-  },
-  countFavoritos: () => get().favoritos.length
+
+  contarFavoritos: () => get().favoritos.length
 }))
