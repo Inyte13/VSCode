@@ -5,6 +5,7 @@ import { Link } from '../components/Link'
 import snarkdown from 'snarkdown'
 import styles from './Job.module.css'
 import { useAuthStore } from '../store/authStore'
+import { useFavoritosStore } from '../store/favoritosStore'
 
 function JobSection ({ titulo, contenido }) {
   const html = snarkdown(contenido)
@@ -20,12 +21,30 @@ function JobSection ({ titulo, contenido }) {
   )
 }
 
+function JobFavoritoBtn ({ id }) {
+  const { alternarFavorito, isFavorito } = useFavoritosStore()
+  const { isLogueado } = useAuthStore()
+  const manejarFavorito = () => {
+    alternarFavorito(id)
+  }
+
+  return (
+    <button
+      onClick={manejarFavorito}
+      disabled={!isLogueado}
+    >
+      {isFavorito(id) ? '❤️' : '🤍'}
+    </button>
+  )
+}
+
 export default function Job () {
   // El 'id' tiene que ser el mismo que aparece en jobs/id
   const { id } = useParams()
   const [job, setJob] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const { isLogueado } = useAuthStore()
 
   useEffect(() => {
     fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
@@ -74,7 +93,6 @@ export default function Job () {
       </main>
     )
   }
-  const { isLogueado } = useAuthStore()
   return (
     <main className={styles.mainJob}>
       <nav className={styles.breadcrumb}>
@@ -96,6 +114,7 @@ export default function Job () {
             <button disabled={!isLogueado}>
               {isLogueado ? 'Aplicar ahora' : 'Inicia sesión para aplicar'}
             </button>
+            <JobFavoritoBtn id={id} />
           </div>
         </header>
         <JobSection
