@@ -2,9 +2,12 @@ import { Link } from './Link'
 import styles from './Header.module.css'
 import { NavLink } from 'react-router'
 import { useAuthStore } from '../store/authStore'
+import { useFavoritosStore } from '../store/favoritosStore'
+
 export function Header () {
   // Importamos desde el context
   const { isLogueado, login, logout } = useAuthStore()
+  const { contarFavoritos } = useFavoritosStore()
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
@@ -23,6 +26,17 @@ export function Header () {
               Empleos
             </NavLink>
           </li>
+          {
+            isLogueado && (
+              <li>
+                <NavLink
+                  to='/perfil'
+                >
+                  Favoritos {contarFavoritos()}
+                </NavLink>
+              </li>
+            )
+          }
           <li><a href='#empresas'>Empresas</a></li>
           <li><a href='#salarios'>Salarios</a></li>
         </ul>
