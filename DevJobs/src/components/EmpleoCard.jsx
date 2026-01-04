@@ -1,9 +1,41 @@
 import { useState } from 'react'
 import styles from './EmpleoCard.module.css'
 import { Link } from './Link'
+import { useFavoritosStore } from '../store/favoritosStore'
+import { useAuthStore } from '../store/authStore'
 
-export function EmpleoCard ({ empleo }) {
+function EmpleoCardFavoritoBtn ({ id }) {
+  const { alternarFavorito, isFavorito } = useFavoritosStore()
+  const { isLogueado } = useAuthStore()
+  const manejarFavorito = () => {
+    alternarFavorito(id)
+  }
+  return (
+    <button
+      onClick={manejarFavorito}
+      disabled={!isLogueado}
+    >
+      {isFavorito(id) ? '❤️' : '🤍'}
+    </button>
+  )
+}
+
+function EmpleoCardApplyBtn ({ id }) {
   const [clickeado, setClickeado] = useState(false)
+  const { isLogueado } = useAuthStore()
+  const manejarApply = () => {
+    setClickeado(true)
+  }
+  return (
+    <button
+      className={clickeado ? styles.clickeado : ''}
+      onClick={manejarApply}
+      disabled={!isLogueado}
+    >{clickeado ? 'Aplicado' : 'Aplicar'}
+    </button>
+  )
+}
+export function EmpleoCard ({ empleo }) {
   return (
     <article className={styles.empleoCard} data-id={empleo.id}>
       <div className={styles.empleo} data-nivel={empleo.data.nivel} data-tecnologia={empleo.data.technology.join(',')}>
@@ -30,11 +62,8 @@ export function EmpleoCard ({ empleo }) {
           >
             Ver detalles
           </Link>
-          <button
-            className={clickeado ? styles.clickeado : ''}
-            onClick={() => setClickeado(true)}
-          >{clickeado ? 'Aplicado' : 'Aplicar'}
-          </button>
+          <EmpleoCardApplyBtn id={empleo.id} />
+          <EmpleoCardFavoritoBtn id={empleo.id} />
         </div>
       </div>
     </article>
