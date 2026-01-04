@@ -64,6 +64,10 @@
         background-color: #4a5;
         pointer-events: none;
         opacity: 0.6;
+        }
+        &:disabled {
+          opacity: .7;
+          pointer-events: none;
         } 
       }
     }
