@@ -7,7 +7,12 @@ import { useFavoritosStore } from '../store/favoritosStore'
 export function Header () {
   // Importamos desde el context
   const { isLogueado, login, logout } = useAuthStore()
-  const { contarFavoritos } = useFavoritosStore()
+  const { contarFavoritos, limpiarFavoritos } = useFavoritosStore()
+
+  const manejarLogout = () => {
+    logout()
+    limpiarFavoritos()
+  }
   return (
     <header className={styles.header}>
       <div className={styles.brand}>
@@ -47,7 +52,7 @@ export function Header () {
         </div>
         {
           isLogueado
-            ? <button onClick={logout}>Cerrar sesión</button>
+            ? <button onClick={manejarLogout}>Cerrar sesión</button>
             : <button onClick={login}>Iniciar sesión</button>
         }
       </div>
