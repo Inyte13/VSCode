@@ -1,10 +1,10 @@
-import styles from "./CardProducto.module.css"
-export function CardProducto({descuento,diaLlegada,producto,precioRegular,precioVenta,img}){
-  return(
+import styles from './ProductoCard.module.css'
+export function ProductoCard ({ descuento, diaLlegada, producto, precioRegular, precioVenta, img }) {
+  return (
     <div className={styles.card}>
       <div className={styles.media}>
-        <a href="#">
-          <img src={img} width="200" height="200" alt=""/>
+        <a href='#'>
+          <img src={img} width='200' height='200' alt='' />
         </a>
         <div>
           <span>-{descuento}%</span>
@@ -17,7 +17,7 @@ export function CardProducto({descuento,diaLlegada,producto,precioRegular,precio
         </div>
         <div className={styles.info}>
           <h3>
-            <a href="#">{producto}</a>
+            <a href='#'>{producto}</a>
           </h3>
           <div className={styles.price}>
             <div>
@@ -33,5 +33,4 @@ export function CardProducto({descuento,diaLlegada,producto,precioRegular,precio
       </div>
     </div>
   )
-
 }
