@@ -1,5 +1,5 @@
 {
-  "name": "prueba-tecnica",
+  "name": "app-gatitos",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -28,5 +28,4 @@
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
   }
-
 }
