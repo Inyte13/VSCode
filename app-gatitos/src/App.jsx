@@ -1,18 +1,13 @@
-import { useEffect, useState } from 'react'
 import './App.css'
-import { fetchWords } from './services/words'
 import { useImg } from './hooks/useImg'
+import { useWords } from './hooks/useWords'
 
 export default function App () {
-  const [words, setWords] = useState('')
+  const { words, actualizarWords } = useWords()
   const { img } = useImg({ words })
 
-  useEffect(() => {
-    fetchWords().then(words => setWords(words))
-  }, [])
-
   const manejarClick = async () => {
-    setWords(await fetchWords())
+    actualizarWords()
   }
 
   return (
