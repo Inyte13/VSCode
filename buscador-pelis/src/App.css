@@ -1,0 +1,17 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem
+  }
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} 
