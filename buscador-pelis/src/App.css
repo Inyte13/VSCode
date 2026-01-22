@@ -1,17 +1,24 @@
-header {
+.content {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  form {
+  header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: .5rem
+    flex-direction: column;
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: .5rem
+    }
   }
+  main {
+    display: flex;
+    max-width: 800px;
+    width: 100%;
+    justify-content: center
+  } 
 }
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} 
