@@ -1,3 +1,4 @@
+import { useRef, useState } from 'react'
 import './App.css'
 import ListPeliculas from './components/ListPeliculas'
 import { usePeliculas } from './hooks/usePeliculas'
@@ -26,13 +27,23 @@ export default function App () {
   //   console.log(fields) // {busqueda1: 'avengers', busqueda2: 'Django'}
   // }
   const { search, setSearch, error } = useSearch()
-  const { peliculas, traerPeliculas, loading } = usePeliculas(search)
+  const [ordenar, setOrdenar] = useState(false)
+  const { peliculas, traerPeliculas, loading } = usePeliculas(search, ordenar)
+  const timeout = useRef(null)
   const handleSubmit = (e) => {
     e.preventDefault()
-    traerPeliculas()
+    traerPeliculas(search)
   }
   const handleCambio = (e) => {
-    setSearch(e.target.value)
+    const newSearch = e.target.value
+    setSearch(newSearch)
+    clearTimeout(timeout.current)
+    timeout.current = setTimeout(() => {
+      traerPeliculas(newSearch)
+    }, 500)
+  }
+  const handleOrdenar = () => {
+    setOrdenar(!ordenar)
   }
   return (
     <div className='content'>
@@ -40,6 +51,7 @@ export default function App () {
         <h1>Buscador de películas</h1>
         <form onSubmit={handleSubmit}>
           <input onChange={handleCambio} value={search} placeholder='Django, Maltidos Bastardos, Avengers' />
+          <input type='checkbox' onChange={handleOrdenar} />
           <button type='submit'>Buscar</button>
         </form>
         {error && (<p style={{ color: '#f00' }}>{error}</p>)}

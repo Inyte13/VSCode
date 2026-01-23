@@ -1,12 +1,13 @@
-import { useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { readPeliculas } from '../services/pelisServices'
 
-export function usePeliculas (search) {
+export function usePeliculas (search, ordenar) {
   const [peliculas, setPeliculas] = useState([])
   const [loading, setLoading] = useState(false)
   const busquedaPrevia = useRef(search)
 
-  const traerPeliculas = async () => {
+  // useCallback es el useMemo para funciones
+  const traerPeliculas = useCallback(async (search) => {
     if (search === busquedaPrevia.current) return
     try {
       if (!search) return
@@ -20,5 +21,12 @@ export function usePeliculas (search) {
       setLoading(false)
     }
   }
-  return { peliculas, loading, traerPeliculas }
+  , [])
+  // Como un fx condicionada
+  const peliculasOrdenadas = useMemo(() => {
+    return ordenar
+      ? [...peliculas].sort((a, b) => a.title.localeCompare(b.title))
+      : peliculas
+  }, [ordenar, peliculas])
+  return { peliculas: peliculasOrdenadas, loading, traerPeliculas }
 }
