@@ -14,7 +14,7 @@ export async function readTrabajos ({ text, title, level, technology, limit, off
   
   if (technology) {
     trabajosFiltrados = trabajosFiltrados.filter(trabajo =>
-      trabajo.tecnologias.includes(technology)
+      trabajo.data.technology.includes(technology)
     )
   }
 

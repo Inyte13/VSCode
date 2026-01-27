@@ -19,7 +19,8 @@ app.use('/trabajos', trabajosRouter)
 
 // NODE_ENV
 // node app.js : Por default usa undefined = development
-// NODE_ENV=production node app.js : indicamos explicitamente el production
+// NODE_ENV=production node app.js : Indicamos explicitamente el production
+// NODE_ENV=test node --test app.test.js : Para hacer los tests 
 
 if (!process.env.NODE_ENV) {
   app.listen(PORT, () => {

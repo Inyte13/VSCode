@@ -19,3 +19,7 @@ app.get('/health', (req, res) => {
     uptime: process.uptime()
   })
 })
+
+// models: Lógica de datos, comunicación con bd
+// view: Lo que devolvemos al cliente
+// controller: Intermediario
