@@ -47,7 +47,7 @@ export default function Job () {
   const { isLogueado } = useAuthStore()
 
   useEffect(() => {
-    fetch(`https://jscamp-api.vercel.app/api/jobs/${id}`)
+    fetch(`http://localhost:3000/trabajos/${id}`)
       .then(response => {
         // Verificar si la response dio okey
         if (!response.ok) throw new Error('Job no encontrado')

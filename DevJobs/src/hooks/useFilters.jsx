@@ -73,7 +73,7 @@ export function useFilters () {
 
         // Guardando todos los filtros
         const queryParams = params.toString()
-        const response = await fetch(`https://jscamp-api.vercel.app/api/jobs?${queryParams}`)
+        const response = await fetch(`http://localhost:3000/trabajos?${queryParams}`)
         const json = await response.json()
         setEmpleos(json.data)
         setTotal(json.total)
