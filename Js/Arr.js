@@ -18,7 +18,7 @@ names.push("Rorro"); // ["Aitana", "Sara", "Valverdina", "Paula", "Rorro"]
 // unshift, lo mandará al inicio
 names.unshift("Adèle"); // ["Adèle", "Aitana", "Sara", "Valverdina", "Paula", "Rorro"]
 
-// splice, (índice, elementos ha eliminar, value) y (índice, elemntos ha eliminar) y podemos usar estos elementos
+// splice, (índice, cantidad despues del índice, value) y (índice, cantidad despues del índice) y podemos usar estos elementos
 names.splice(1, 3, "Luis"); // ["Adèle", "Luis", "Paula", "Rorro"]
 
 // slice, eliminar lo que no está seleccionado [índice, final>
